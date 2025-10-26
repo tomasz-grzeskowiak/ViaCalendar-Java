@@ -3442,7 +3442,7 @@ public final class Calendar {
       "_DELETE\020\004\022\017\n\013ACTION_LIST\020\005*b\n\017StatusType" +
       "Proto\022\022\n\016STATUS_UNKNOWN\020\000\022\r\n\tSTATUS_OK\020\001" +
       "\022\020\n\014STATUS_ERROR\020\002\022\032\n\026STATUS_INVALID_PAY" +
-      "LOAD\020\0032x\n\024CalendarProtoService\022`\n\013sendRe" +
+      "LOAD\020\0032x\n\024CalendarProtoService\022`\n\013SendRe" +
       "quest\022\'.via.sep3.viacalendar.gRPC.Reques" +
       "tProto\032(.via.sep3.viacalendar.gRPC.Respo" +
       "nseProtob\006proto3"

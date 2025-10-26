@@ -19,7 +19,7 @@ public final class CalendarProtoServiceGrpc {
       via.sep3.viacalendar.gRPC.Calendar.ResponseProto> getSendRequestMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "sendRequest",
+      fullMethodName = SERVICE_NAME + '/' + "SendRequest",
       requestType = via.sep3.viacalendar.gRPC.Calendar.RequestProto.class,
       responseType = via.sep3.viacalendar.gRPC.Calendar.ResponseProto.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -32,13 +32,13 @@ public final class CalendarProtoServiceGrpc {
           CalendarProtoServiceGrpc.getSendRequestMethod = getSendRequestMethod =
               io.grpc.MethodDescriptor.<via.sep3.viacalendar.gRPC.Calendar.RequestProto, via.sep3.viacalendar.gRPC.Calendar.ResponseProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendRequest"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendRequest"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   via.sep3.viacalendar.gRPC.Calendar.RequestProto.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   via.sep3.viacalendar.gRPC.Calendar.ResponseProto.getDefaultInstance()))
-              .setSchemaDescriptor(new CalendarProtoServiceMethodDescriptorSupplier("sendRequest"))
+              .setSchemaDescriptor(new CalendarProtoServiceMethodDescriptorSupplier("SendRequest"))
               .build();
         }
       }

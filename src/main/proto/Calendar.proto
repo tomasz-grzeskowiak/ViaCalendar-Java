@@ -38,7 +38,7 @@ message EventProto {
   string name = 2;
 }
 service CalendarProtoService {
-  rpc sendRequest (RequestProto) returns (ResponseProto);
+  rpc SendRequest (RequestProto) returns (ResponseProto);
 }
 
 message EventProtoList {
