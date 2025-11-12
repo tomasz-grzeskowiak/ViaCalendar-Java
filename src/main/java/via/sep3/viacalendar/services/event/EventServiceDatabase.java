@@ -1,7 +1,7 @@
 package via.sep3.viacalendar.services.event;
 
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import via.sep3.viacalendar.gRPC.Calendar.EventProto;
 import via.sep3.viacalendar.gRPC.Calendar.EventProtoList;
 import via.sep3.viacalendar.model.Event;
@@ -9,6 +9,7 @@ import via.sep3.viacalendar.repositories.database.EventRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class EventServiceDatabase implements EventService {
@@ -33,7 +34,7 @@ public class EventServiceDatabase implements EventService {
         Event toUpdate = eventRepository.findById(payload.getId())
                 .orElseThrow(() -> new RuntimeException("Event not found"));
         toUpdate.setName(payload.getName());
-        Event updated = eventRepository.save(toUpdate);
+        eventRepository.save(toUpdate);
     }
     @Transactional
     @Override
@@ -41,6 +42,7 @@ public class EventServiceDatabase implements EventService {
         eventRepository.deleteById(id);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public EventProto getSingle(int id) {
         Optional<Event> fetched = eventRepository.findById(id);
@@ -51,17 +53,18 @@ public class EventServiceDatabase implements EventService {
                 .build();
     }
 
+    @Transactional(readOnly = true)
     @Override
     public EventProtoList getMany() {
         List<Event> events = eventRepository.findAll();
-        EventProtoList.Builder builder = EventProtoList.newBuilder();
-        for (Event event : events) {
-            EventProto eventProto = EventProto.newBuilder()
-                    .setId(event.getEventId())
-                    .setName(event.getName())
-                    .build();
-            builder.addEvents(eventProto);
-        }
-        return builder.build();
+        List<EventProto> eventProtos = events.stream()
+                .map(event -> EventProto.newBuilder()
+                        .setId(event.getEventId())
+                        .setName(event.getName())
+                        .build())
+                .collect(Collectors.toList());
+        return EventProtoList.newBuilder()
+                .addAllEvents(eventProtos)
+                .build();
     }
 }

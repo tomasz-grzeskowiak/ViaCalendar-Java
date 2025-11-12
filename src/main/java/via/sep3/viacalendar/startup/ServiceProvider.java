@@ -7,10 +7,15 @@ import via.sep3.viacalendar.services.event.EventService;
 import via.sep3.viacalendar.services.event.EventServiceDatabase;
 @Service
 public class ServiceProvider {
+        private EventHandler eventHandler;
+
         public EventService getCompanyService(){
             return GlobalContext.getBean(EventServiceDatabase.class);
         }
         public ViaCalendarHandler getEventHandler(){
-            return new EventHandler(getCompanyService());
+            if (eventHandler == null) {
+                eventHandler = new EventHandler(getCompanyService());
+            }
+            return eventHandler;
         }
 }
