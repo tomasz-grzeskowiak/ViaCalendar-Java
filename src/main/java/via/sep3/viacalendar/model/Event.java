@@ -13,7 +13,7 @@ public class Event {
     @Column (name = "tag", nullable = false)
     String tag;
     @Column (name = "recursive",  nullable = false, length = 3)
-    String recursive;
+    Boolean recursive;
     public String getName() {
         return name;
     }
@@ -36,10 +36,10 @@ public class Event {
     public void setTag(String tag) {
         this.tag = tag;
     }
-    public String getRecursive() {
+    public Boolean getRecursive() {
         return recursive;
     }
-    public void setRecursive(String recursive) {
+    public void setRecursive(Boolean recursive) {
         this.recursive = recursive;
     }
 
