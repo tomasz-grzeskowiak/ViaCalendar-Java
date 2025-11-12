@@ -10,9 +10,9 @@ public class Event {
     Integer eventId;
     @Column (name ="name", nullable = false, length = 100)
     String name;
-    @Column (name = "tag", nullable = false)
+    @Column (name = "tag", nullable = false, length = 100)
     String tag;
-    @Column (name = "recursive",  nullable = false, length = 3)
+    @Column (name = "recursive")
     Boolean recursive;
     public String getName() {
         return name;

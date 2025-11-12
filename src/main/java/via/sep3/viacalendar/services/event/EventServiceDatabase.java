@@ -27,8 +27,8 @@ public class EventServiceDatabase implements EventService {
         return EventProto.newBuilder()
                 .setId(created.getEventId())
                 .setName(created.getName())
-                .setTag(event.getTag())
-                .setRecursive(event.getRecursive())
+                .setTag(created.getTag())
+                .setRecursive(created.getRecursive())
                 .build();
     }
     @Transactional
