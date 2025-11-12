@@ -21,10 +21,14 @@ public class EventServiceDatabase implements EventService {
     public EventProto create(EventProto payload) {
         Event event = new Event();
         event.setName(payload.getName());
+        event.setTag(payload.getTag());
+        event.setRecursive(payload.getRecursive());
         Event created = eventRepository.save(event);
         return EventProto.newBuilder()
                 .setId(created.getEventId())
                 .setName(created.getName())
+                .setTag(event.getTag())
+                .setRecursive(event.getRecursive())
                 .build();
     }
     @Transactional
@@ -33,6 +37,8 @@ public class EventServiceDatabase implements EventService {
         Event toUpdate = eventRepository.findById(payload.getId())
                 .orElseThrow(() -> new RuntimeException("Event not found"));
         toUpdate.setName(payload.getName());
+        toUpdate.setTag(payload.getTag());
+        toUpdate.setRecursive(payload.getRecursive());
         Event updated = eventRepository.save(toUpdate);
     }
     @Transactional
@@ -48,7 +54,10 @@ public class EventServiceDatabase implements EventService {
         return EventProto.newBuilder()
                 .setName(event.getName())
                 .setId(event.getEventId())
+                .setTag(event.getTag())
+                .setRecursive(event.getRecursive())
                 .build();
+
     }
 
     @Override
@@ -59,6 +68,8 @@ public class EventServiceDatabase implements EventService {
             EventProto eventProto = EventProto.newBuilder()
                     .setId(event.getEventId())
                     .setName(event.getName())
+                    .setTag(event.getTag())
+                    .setRecursive(event.getRecursive())
                     .build();
             builder.addEvents(eventProto);
         }

@@ -1980,6 +1980,42 @@ public final class Calendar {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <code>string tag = 3;</code>
+     * @return The tag.
+     */
+    java.lang.String getTag();
+    /**
+     * <code>string tag = 3;</code>
+     * @return The bytes for tag.
+     */
+    com.google.protobuf.ByteString
+        getTagBytes();
+
+    /**
+     * <code>string recursive = 4;</code>
+     * @return The recursive.
+     */
+    java.lang.String getRecursive();
+    /**
+     * <code>string recursive = 4;</code>
+     * @return The bytes for recursive.
+     */
+    com.google.protobuf.ByteString
+        getRecursiveBytes();
+
+    /**
+     * <code>string type_of_recursive = 5;</code>
+     * @return The typeOfRecursive.
+     */
+    java.lang.String getTypeOfRecursive();
+    /**
+     * <code>string type_of_recursive = 5;</code>
+     * @return The bytes for typeOfRecursive.
+     */
+    com.google.protobuf.ByteString
+        getTypeOfRecursiveBytes();
   }
   /**
    * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProto}
@@ -1995,6 +2031,9 @@ public final class Calendar {
     }
     private EventProto() {
       name_ = "";
+      tag_ = "";
+      recursive_ = "";
+      typeOfRecursive_ = "";
     }
 
     @java.lang.Override
@@ -2036,6 +2075,24 @@ public final class Calendar {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tag_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              recursive_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              typeOfRecursive_ = s;
               break;
             }
             default: {
@@ -2121,6 +2178,120 @@ public final class Calendar {
       }
     }
 
+    public static final int TAG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object tag_;
+    /**
+     * <code>string tag = 3;</code>
+     * @return The tag.
+     */
+    @java.lang.Override
+    public java.lang.String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tag_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tag = 3;</code>
+     * @return The bytes for tag.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECURSIVE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object recursive_;
+    /**
+     * <code>string recursive = 4;</code>
+     * @return The recursive.
+     */
+    @java.lang.Override
+    public java.lang.String getRecursive() {
+      java.lang.Object ref = recursive_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        recursive_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string recursive = 4;</code>
+     * @return The bytes for recursive.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRecursiveBytes() {
+      java.lang.Object ref = recursive_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        recursive_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_OF_RECURSIVE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object typeOfRecursive_;
+    /**
+     * <code>string type_of_recursive = 5;</code>
+     * @return The typeOfRecursive.
+     */
+    @java.lang.Override
+    public java.lang.String getTypeOfRecursive() {
+      java.lang.Object ref = typeOfRecursive_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        typeOfRecursive_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type_of_recursive = 5;</code>
+     * @return The bytes for typeOfRecursive.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeOfRecursiveBytes() {
+      java.lang.Object ref = typeOfRecursive_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        typeOfRecursive_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2141,6 +2312,15 @@ public final class Calendar {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tag_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tag_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recursive_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, recursive_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(typeOfRecursive_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typeOfRecursive_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2156,6 +2336,15 @@ public final class Calendar {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tag_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tag_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recursive_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, recursive_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(typeOfRecursive_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typeOfRecursive_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2176,6 +2365,12 @@ public final class Calendar {
           != other.getId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getTag()
+          .equals(other.getTag())) return false;
+      if (!getRecursive()
+          .equals(other.getRecursive())) return false;
+      if (!getTypeOfRecursive()
+          .equals(other.getTypeOfRecursive())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2191,6 +2386,12 @@ public final class Calendar {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTag().hashCode();
+      hash = (37 * hash) + RECURSIVE_FIELD_NUMBER;
+      hash = (53 * hash) + getRecursive().hashCode();
+      hash = (37 * hash) + TYPE_OF_RECURSIVE_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeOfRecursive().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2328,6 +2529,12 @@ public final class Calendar {
 
         name_ = "";
 
+        tag_ = "";
+
+        recursive_ = "";
+
+        typeOfRecursive_ = "";
+
         return this;
       }
 
@@ -2356,6 +2563,9 @@ public final class Calendar {
         via.sep3.viacalendar.gRPC.Calendar.EventProto result = new via.sep3.viacalendar.gRPC.Calendar.EventProto(this);
         result.id_ = id_;
         result.name_ = name_;
+        result.tag_ = tag_;
+        result.recursive_ = recursive_;
+        result.typeOfRecursive_ = typeOfRecursive_;
         onBuilt();
         return result;
       }
@@ -2409,6 +2619,18 @@ public final class Calendar {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getTag().isEmpty()) {
+          tag_ = other.tag_;
+          onChanged();
+        }
+        if (!other.getRecursive().isEmpty()) {
+          recursive_ = other.recursive_;
+          onChanged();
+        }
+        if (!other.getTypeOfRecursive().isEmpty()) {
+          typeOfRecursive_ = other.typeOfRecursive_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2543,6 +2765,234 @@ public final class Calendar {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tag_ = "";
+      /**
+       * <code>string tag = 3;</code>
+       * @return The tag.
+       */
+      public java.lang.String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tag = 3;</code>
+       * @return The bytes for tag.
+       */
+      public com.google.protobuf.ByteString
+          getTagBytes() {
+        java.lang.Object ref = tag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tag = 3;</code>
+       * @param value The tag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTag(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tag = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTag() {
+        
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tag = 3;</code>
+       * @param value The bytes for tag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTagBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object recursive_ = "";
+      /**
+       * <code>string recursive = 4;</code>
+       * @return The recursive.
+       */
+      public java.lang.String getRecursive() {
+        java.lang.Object ref = recursive_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          recursive_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string recursive = 4;</code>
+       * @return The bytes for recursive.
+       */
+      public com.google.protobuf.ByteString
+          getRecursiveBytes() {
+        java.lang.Object ref = recursive_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          recursive_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string recursive = 4;</code>
+       * @param value The recursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecursive(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        recursive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string recursive = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecursive() {
+        
+        recursive_ = getDefaultInstance().getRecursive();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string recursive = 4;</code>
+       * @param value The bytes for recursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecursiveBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        recursive_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object typeOfRecursive_ = "";
+      /**
+       * <code>string type_of_recursive = 5;</code>
+       * @return The typeOfRecursive.
+       */
+      public java.lang.String getTypeOfRecursive() {
+        java.lang.Object ref = typeOfRecursive_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          typeOfRecursive_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type_of_recursive = 5;</code>
+       * @return The bytes for typeOfRecursive.
+       */
+      public com.google.protobuf.ByteString
+          getTypeOfRecursiveBytes() {
+        java.lang.Object ref = typeOfRecursive_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          typeOfRecursive_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type_of_recursive = 5;</code>
+       * @param value The typeOfRecursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeOfRecursive(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        typeOfRecursive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type_of_recursive = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTypeOfRecursive() {
+        
+        typeOfRecursive_ = getDefaultInstance().getTypeOfRecursive();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type_of_recursive = 5;</code>
+       * @param value The bytes for typeOfRecursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeOfRecursiveBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        typeOfRecursive_ = value;
         onChanged();
         return this;
       }
@@ -3432,20 +3882,21 @@ public final class Calendar {
       "obuf.Any\"r\n\rResponseProto\022:\n\006status\030\001 \001(" +
       "\0162*.via.sep3.viacalendar.gRPC.StatusType" +
       "Proto\022%\n\007payload\030\002 \001(\0132\024.google.protobuf" +
-      ".Any\"&\n\nEventProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002" +
-      " \001(\t\"G\n\016EventProtoList\0225\n\006events\030\001 \003(\0132%" +
-      ".via.sep3.viacalendar.gRPC.EventProto*:\n" +
-      "\020HandlerTypeProto\022\023\n\017HANDLER_UNKNOWN\020\000\022\021" +
-      "\n\rHANDLER_EVENT\020\001*\177\n\017ActionTypeProto\022\022\n\016" +
-      "ACTION_UNKNOWN\020\000\022\021\n\rACTION_CREATE\020\001\022\016\n\nA" +
-      "CTION_GET\020\002\022\021\n\rACTION_UPDATE\020\003\022\021\n\rACTION" +
-      "_DELETE\020\004\022\017\n\013ACTION_LIST\020\005*b\n\017StatusType" +
-      "Proto\022\022\n\016STATUS_UNKNOWN\020\000\022\r\n\tSTATUS_OK\020\001" +
-      "\022\020\n\014STATUS_ERROR\020\002\022\032\n\026STATUS_INVALID_PAY" +
-      "LOAD\020\0032x\n\024CalendarProtoService\022`\n\013SendRe" +
-      "quest\022\'.via.sep3.viacalendar.gRPC.Reques" +
-      "tProto\032(.via.sep3.viacalendar.gRPC.Respo" +
-      "nseProtob\006proto3"
+      ".Any\"a\n\nEventProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002" +
+      " \001(\t\022\013\n\003tag\030\003 \001(\t\022\021\n\trecursive\030\004 \001(\t\022\031\n\021" +
+      "type_of_recursive\030\005 \001(\t\"G\n\016EventProtoLis" +
+      "t\0225\n\006events\030\001 \003(\0132%.via.sep3.viacalendar" +
+      ".gRPC.EventProto*:\n\020HandlerTypeProto\022\023\n\017" +
+      "HANDLER_UNKNOWN\020\000\022\021\n\rHANDLER_EVENT\020\001*\177\n\017" +
+      "ActionTypeProto\022\022\n\016ACTION_UNKNOWN\020\000\022\021\n\rA" +
+      "CTION_CREATE\020\001\022\016\n\nACTION_GET\020\002\022\021\n\rACTION" +
+      "_UPDATE\020\003\022\021\n\rACTION_DELETE\020\004\022\017\n\013ACTION_L" +
+      "IST\020\005*b\n\017StatusTypeProto\022\022\n\016STATUS_UNKNO" +
+      "WN\020\000\022\r\n\tSTATUS_OK\020\001\022\020\n\014STATUS_ERROR\020\002\022\032\n" +
+      "\026STATUS_INVALID_PAYLOAD\020\0032x\n\024CalendarPro" +
+      "toService\022`\n\013SendRequest\022\'.via.sep3.viac" +
+      "alendar.gRPC.RequestProto\032(.via.sep3.via" +
+      "calendar.gRPC.ResponseProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3469,7 +3920,7 @@ public final class Calendar {
     internal_static_via_sep3_viacalendar_gRPC_EventProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_EventProto_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "Id", "Name", "Tag", "Recursive", "TypeOfRecursive", });
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_fieldAccessorTable = new

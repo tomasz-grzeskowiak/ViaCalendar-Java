@@ -8,8 +8,12 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eventId;
-    @Column (name ="name", nullable = false)
+    @Column (name ="name", nullable = false, length = 100)
     String name;
+    @Column (name = "tag", nullable = false)
+    String tag;
+    @Column (name = "recursive",  nullable = false, length = 3)
+    String recursive;
     public String getName() {
         return name;
     }
@@ -25,4 +29,18 @@ public class Event {
     public void setEventId(Integer eventId) {
         this.eventId = eventId;
     }
+
+    public String getTag() {
+        return tag;
+    }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+    public String getRecursive() {
+        return recursive;
+    }
+    public void setRecursive(String recursive) {
+        this.recursive = recursive;
+    }
+
 }
