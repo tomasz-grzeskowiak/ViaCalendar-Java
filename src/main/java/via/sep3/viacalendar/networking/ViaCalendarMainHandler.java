@@ -5,6 +5,7 @@ import com.google.protobuf.Message;
 import com.google.protobuf.StringValue;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
+import org.springframework.stereotype.Service;
 import via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.RequestProto;
 import via.sep3.viacalendar.gRPC.Calendar.ResponseProto;
@@ -14,6 +15,7 @@ import via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto;
 
 import java.util.Map;
 
+@Service
 @GRpcService
 public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarProtoServiceImplBase {
     private final Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider;

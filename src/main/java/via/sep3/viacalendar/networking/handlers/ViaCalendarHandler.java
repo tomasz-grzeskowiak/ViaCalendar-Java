@@ -6,7 +6,7 @@ import via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto;
 
 
-@Service
+
 public interface ViaCalendarHandler {
     Message handle(ActionTypeProto actionType, Object payload);
     HandlerTypeProto getType();
