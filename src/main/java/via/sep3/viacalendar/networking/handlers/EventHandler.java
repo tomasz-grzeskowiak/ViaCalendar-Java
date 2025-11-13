@@ -3,6 +3,7 @@ package via.sep3.viacalendar.networking.handlers;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
+import via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.EventProto;
 import via.sep3.viacalendar.services.event.EventService;
@@ -37,5 +38,8 @@ public class EventHandler implements ViaCalendarHandler {
         }
 
         return Any.pack(proto);
+    }
+    public HandlerTypeProto getType() {
+        return HandlerTypeProto.HANDLER_EVENT;
     }
 }
