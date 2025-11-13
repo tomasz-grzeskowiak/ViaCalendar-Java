@@ -35,6 +35,7 @@ public class EventHandler implements ViaCalendarHandler {
         if (proto == null) {
             proto = EventProto.newBuilder().build();
         }
+
         return Any.pack(proto);
     }
 }
