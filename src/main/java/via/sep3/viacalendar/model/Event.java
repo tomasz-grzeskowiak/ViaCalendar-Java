@@ -3,7 +3,7 @@ package via.sep3.viacalendar.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name = "event", schema = "via_calendar")
+@Table (name = "events", schema = "via_calendar")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
