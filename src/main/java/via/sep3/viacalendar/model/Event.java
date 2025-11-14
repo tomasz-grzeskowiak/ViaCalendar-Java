@@ -1,9 +1,11 @@
 package via.sep3.viacalendar.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
-@Table (name = "event", schema = "via_calendar")
+@Table (name = "events", schema = "via_calendar")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +16,20 @@ public class Event {
     String tag;
     @Column (name = "recursive")
     Boolean recursive;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.SET_NULL)
+    @JoinColumn(name = "creator_id")
+    private User creator;
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
+    }
+
     public String getName() {
         return name;
     }

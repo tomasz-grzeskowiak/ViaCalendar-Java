@@ -5,27 +5,32 @@ import com.google.protobuf.Message;
 import com.google.protobuf.StringValue;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
+import org.springframework.stereotype.Service;
 import via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.RequestProto;
 import via.sep3.viacalendar.gRPC.Calendar.ResponseProto;
 import via.sep3.viacalendar.gRPC.CalendarProtoServiceGrpc;
 import via.sep3.viacalendar.networking.handlers.ViaCalendarHandler;
-import via.sep3.viacalendar.startup.ServiceProvider;
+import via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto;
+
+import java.util.Map;
+
+@Service
 @GRpcService
 public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarProtoServiceImplBase {
-    private final ServiceProvider serviceProvider;
+    private final Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider;
 
-    public ViaCalendarMainHandler(ServiceProvider serviceProvider) {
+    public ViaCalendarMainHandler(Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider) {
         this.serviceProvider = serviceProvider;
     }
     @Override
     public void sendRequest(RequestProto request, StreamObserver<ResponseProto> responseObserver) {
         try {
             // Route request based on HandlerType
-            ViaCalendarHandler handler = switch (request.getHandler()) {
-                case HANDLER_EVENT -> serviceProvider.getEventHandler();
-                default -> throw new IllegalArgumentException("Unknown handler type");
-            };
+            ViaCalendarHandler handler = serviceProvider.get(request.getHandler());
+            if (handler == null) {
+                throw new IllegalArgumentException("Unknown handler type");
+            }
             // Message is the protobuf object
             Message result = handler.handle(request.getAction(), request.getPayload());
             // Only pack if not already an Any
