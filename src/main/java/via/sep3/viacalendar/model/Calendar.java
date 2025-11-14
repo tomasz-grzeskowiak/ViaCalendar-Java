@@ -1,4 +1,4 @@
-﻿package via.sep3.viacalendar.model;
+package via.sep3.viacalendar.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
