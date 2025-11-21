@@ -5,6 +5,8 @@ import com.google.protobuf.Message;
 import com.google.protobuf.StringValue;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.RequestProto;
@@ -18,6 +20,7 @@ import java.util.Map;
 @Service
 @GRpcService
 public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarProtoServiceImplBase {
+    private final static Logger log =  LoggerFactory.getLogger(ViaCalendarMainHandler.class);
     private final Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider;
 
     public ViaCalendarMainHandler(Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider) {
@@ -29,6 +32,7 @@ public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarPro
             // Route request based on HandlerType
             ViaCalendarHandler handler = serviceProvider.get(request.getHandler());
             if (handler == null) {
+                log.error("Unknown handler type for request {}", request);
                 throw new IllegalArgumentException("Unknown handler type");
             }
             // Message is the protobuf object
@@ -45,6 +49,7 @@ public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarPro
                     .setStatus(StatusTypeProto.STATUS_OK)
                     .setPayload(payload)
                     .build();
+            log.info("Sending response {}", response);
             sendResponseWithHandleException(responseObserver, response);
 
         } catch (Exception e) {
@@ -65,7 +70,7 @@ public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarPro
         try {
             responseObserver.onCompleted();
         } catch (Exception e) {
-            System.err.println("Error completing gRPC response: " + e.getMessage());
+            log.error("Error sending response", e);
         }
     }
     private void sendGrpcError(StreamObserver<ResponseProto> observer, StatusTypeProto status, String errorMessage) {

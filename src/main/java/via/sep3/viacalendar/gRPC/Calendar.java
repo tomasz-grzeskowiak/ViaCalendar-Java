@@ -31,6 +31,14 @@ public final class Calendar {
      * <code>HANDLER_USER = 2;</code>
      */
     HANDLER_USER(2),
+    /**
+     * <code>HANDLER_GROUP = 3;</code>
+     */
+    HANDLER_GROUP(3),
+    /**
+     * <code>HANDLER_CALENDAR = 4;</code>
+     */
+    HANDLER_CALENDAR(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -46,6 +54,14 @@ public final class Calendar {
      * <code>HANDLER_USER = 2;</code>
      */
     public static final int HANDLER_USER_VALUE = 2;
+    /**
+     * <code>HANDLER_GROUP = 3;</code>
+     */
+    public static final int HANDLER_GROUP_VALUE = 3;
+    /**
+     * <code>HANDLER_CALENDAR = 4;</code>
+     */
+    public static final int HANDLER_CALENDAR_VALUE = 4;
 
 
     public final int getNumber() {
@@ -75,6 +91,8 @@ public final class Calendar {
         case 0: return HANDLER_UNKNOWN;
         case 1: return HANDLER_EVENT;
         case 2: return HANDLER_USER;
+        case 3: return HANDLER_GROUP;
+        case 4: return HANDLER_CALENDAR;
         default: return null;
       }
     }
@@ -399,6 +417,132 @@ public final class Calendar {
     }
 
     // @@protoc_insertion_point(enum_scope:via.sep3.viacalendar.gRPC.StatusTypeProto)
+  }
+
+  /**
+   * Protobuf enum {@code via.sep3.viacalendar.gRPC.TypeOfRecursive}
+   */
+  public enum TypeOfRecursive
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NONE = 0;</code>
+     */
+    NONE(0),
+    /**
+     * <code>DAY = 1;</code>
+     */
+    DAY(1),
+    /**
+     * <code>MONTH = 2;</code>
+     */
+    MONTH(2),
+    /**
+     * <code>YEAR = 3;</code>
+     */
+    YEAR(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>NONE = 0;</code>
+     */
+    public static final int NONE_VALUE = 0;
+    /**
+     * <code>DAY = 1;</code>
+     */
+    public static final int DAY_VALUE = 1;
+    /**
+     * <code>MONTH = 2;</code>
+     */
+    public static final int MONTH_VALUE = 2;
+    /**
+     * <code>YEAR = 3;</code>
+     */
+    public static final int YEAR_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TypeOfRecursive valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TypeOfRecursive forNumber(int value) {
+      switch (value) {
+        case 0: return NONE;
+        case 1: return DAY;
+        case 2: return MONTH;
+        case 3: return YEAR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TypeOfRecursive>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TypeOfRecursive> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TypeOfRecursive>() {
+            public TypeOfRecursive findValueByNumber(int number) {
+              return TypeOfRecursive.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return via.sep3.viacalendar.gRPC.Calendar.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final TypeOfRecursive[] VALUES = values();
+
+    public static TypeOfRecursive valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TypeOfRecursive(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:via.sep3.viacalendar.gRPC.TypeOfRecursive)
   }
 
   public interface RequestProtoOrBuilder extends
@@ -2007,6 +2151,38 @@ public final class Calendar {
      * @return The recursive.
      */
     boolean getRecursive();
+
+    /**
+     * <code>int32 creatorId = 5;</code>
+     * @return The creatorId.
+     */
+    int getCreatorId();
+
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     * @return The duration.
+     */
+    com.google.protobuf.Timestamp getDuration();
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getDurationOrBuilder();
+
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+     * @return The enum numeric value on the wire for typeOfRecursive.
+     */
+    int getTypeOfRecursiveValue();
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+     * @return The typeOfRecursive.
+     */
+    via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive getTypeOfRecursive();
   }
   /**
    * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProto}
@@ -2023,6 +2199,7 @@ public final class Calendar {
     private EventProto() {
       name_ = "";
       tag_ = "";
+      typeOfRecursive_ = 0;
     }
 
     @java.lang.Override
@@ -2075,6 +2252,30 @@ public final class Calendar {
             case 32: {
 
               recursive_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              creatorId_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (duration_ != null) {
+                subBuilder = duration_.toBuilder();
+              }
+              duration_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(duration_);
+                duration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              typeOfRecursive_ = rawValue;
               break;
             }
             default: {
@@ -2209,6 +2410,62 @@ public final class Calendar {
       return recursive_;
     }
 
+    public static final int CREATORID_FIELD_NUMBER = 5;
+    private int creatorId_;
+    /**
+     * <code>int32 creatorId = 5;</code>
+     * @return The creatorId.
+     */
+    @java.lang.Override
+    public int getCreatorId() {
+      return creatorId_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp duration_;
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getDuration() {
+      return duration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp duration = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getDurationOrBuilder() {
+      return getDuration();
+    }
+
+    public static final int TYPEOFRECURSIVE_FIELD_NUMBER = 7;
+    private int typeOfRecursive_;
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+     * @return The enum numeric value on the wire for typeOfRecursive.
+     */
+    @java.lang.Override public int getTypeOfRecursiveValue() {
+      return typeOfRecursive_;
+    }
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+     * @return The typeOfRecursive.
+     */
+    @java.lang.Override public via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive getTypeOfRecursive() {
+      @SuppressWarnings("deprecation")
+      via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive result = via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.valueOf(typeOfRecursive_);
+      return result == null ? via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2235,6 +2492,15 @@ public final class Calendar {
       if (recursive_ != false) {
         output.writeBool(4, recursive_);
       }
+      if (creatorId_ != 0) {
+        output.writeInt32(5, creatorId_);
+      }
+      if (duration_ != null) {
+        output.writeMessage(6, getDuration());
+      }
+      if (typeOfRecursive_ != via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.NONE.getNumber()) {
+        output.writeEnum(7, typeOfRecursive_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2257,6 +2523,18 @@ public final class Calendar {
       if (recursive_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, recursive_);
+      }
+      if (creatorId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, creatorId_);
+      }
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getDuration());
+      }
+      if (typeOfRecursive_ != via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, typeOfRecursive_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2281,6 +2559,14 @@ public final class Calendar {
           .equals(other.getTag())) return false;
       if (getRecursive()
           != other.getRecursive()) return false;
+      if (getCreatorId()
+          != other.getCreatorId()) return false;
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration()
+            .equals(other.getDuration())) return false;
+      }
+      if (typeOfRecursive_ != other.typeOfRecursive_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2301,6 +2587,14 @@ public final class Calendar {
       hash = (37 * hash) + RECURSIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getRecursive());
+      hash = (37 * hash) + CREATORID_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatorId();
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      hash = (37 * hash) + TYPEOFRECURSIVE_FIELD_NUMBER;
+      hash = (53 * hash) + typeOfRecursive_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2442,6 +2736,16 @@ public final class Calendar {
 
         recursive_ = false;
 
+        creatorId_ = 0;
+
+        if (durationBuilder_ == null) {
+          duration_ = null;
+        } else {
+          duration_ = null;
+          durationBuilder_ = null;
+        }
+        typeOfRecursive_ = 0;
+
         return this;
       }
 
@@ -2472,6 +2776,13 @@ public final class Calendar {
         result.name_ = name_;
         result.tag_ = tag_;
         result.recursive_ = recursive_;
+        result.creatorId_ = creatorId_;
+        if (durationBuilder_ == null) {
+          result.duration_ = duration_;
+        } else {
+          result.duration_ = durationBuilder_.build();
+        }
+        result.typeOfRecursive_ = typeOfRecursive_;
         onBuilt();
         return result;
       }
@@ -2533,6 +2844,15 @@ public final class Calendar {
         }
         if (other.getRecursive() != false) {
           setRecursive(other.getRecursive());
+        }
+        if (other.getCreatorId() != 0) {
+          setCreatorId(other.getCreatorId());
+        }
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        if (other.typeOfRecursive_ != 0) {
+          setTypeOfRecursiveValue(other.getTypeOfRecursiveValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2776,6 +3096,210 @@ public final class Calendar {
         onChanged();
         return this;
       }
+
+      private int creatorId_ ;
+      /**
+       * <code>int32 creatorId = 5;</code>
+       * @return The creatorId.
+       */
+      @java.lang.Override
+      public int getCreatorId() {
+        return creatorId_;
+      }
+      /**
+       * <code>int32 creatorId = 5;</code>
+       * @param value The creatorId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatorId(int value) {
+        
+        creatorId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 creatorId = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatorId() {
+        
+        creatorId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> durationBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return durationBuilder_ != null || duration_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       * @return The duration.
+       */
+      public com.google.protobuf.Timestamp getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Timestamp value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+          onChanged();
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public Builder setDuration(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+          onChanged();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public Builder mergeDuration(com.google.protobuf.Timestamp value) {
+        if (durationBuilder_ == null) {
+          if (duration_ != null) {
+            duration_ =
+              com.google.protobuf.Timestamp.newBuilder(duration_).mergeFrom(value).buildPartial();
+          } else {
+            duration_ = value;
+          }
+          onChanged();
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public Builder clearDuration() {
+        if (durationBuilder_ == null) {
+          duration_ = null;
+          onChanged();
+        } else {
+          duration_ = null;
+          durationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getDurationBuilder() {
+        
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp duration = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getDuration(),
+                  getParentForChildren(),
+                  isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      private int typeOfRecursive_ = 0;
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+       * @return The enum numeric value on the wire for typeOfRecursive.
+       */
+      @java.lang.Override public int getTypeOfRecursiveValue() {
+        return typeOfRecursive_;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+       * @param value The enum numeric value on the wire for typeOfRecursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeOfRecursiveValue(int value) {
+        
+        typeOfRecursive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+       * @return The typeOfRecursive.
+       */
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive getTypeOfRecursive() {
+        @SuppressWarnings("deprecation")
+        via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive result = via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.valueOf(typeOfRecursive_);
+        return result == null ? via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+       * @param value The typeOfRecursive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeOfRecursive(via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursive value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        typeOfRecursive_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursive typeOfRecursive = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTypeOfRecursive() {
+        
+        typeOfRecursive_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2898,6 +3422,69 @@ public final class Calendar {
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
+
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> 
+        getEventListList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index);
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    int getEventListCount();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+        getEventListOrBuilderList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> 
+        getCalendarsList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index);
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    int getCalendarsCount();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+        getCalendarsOrBuilderList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
+        int index);
+
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     * @return Whether the group field is set.
+     */
+    boolean hasGroup();
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     * @return The group.
+     */
+    via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroup();
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupOrBuilder();
   }
   /**
    * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
@@ -2917,6 +3504,8 @@ public final class Calendar {
       password_ = "";
       firstName_ = "";
       lastName_ = "";
+      eventList_ = java.util.Collections.emptyList();
+      calendars_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2939,6 +3528,7 @@ public final class Calendar {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2984,6 +3574,37 @@ public final class Calendar {
               lastName_ = s;
               break;
             }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                eventList_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.EventProto>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              eventList_.add(
+                  input.readMessage(via.sep3.viacalendar.gRPC.Calendar.EventProto.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                calendars_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.CalendarProto>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              calendars_.add(
+                  input.readMessage(via.sep3.viacalendar.gRPC.Calendar.CalendarProto.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder subBuilder = null;
+              if (group_ != null) {
+                subBuilder = group_.toBuilder();
+              }
+              group_ = input.readMessage(via.sep3.viacalendar.gRPC.Calendar.GroupProto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(group_);
+                group_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3001,6 +3622,12 @@ public final class Calendar {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          eventList_ = java.util.Collections.unmodifiableList(eventList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          calendars_ = java.util.Collections.unmodifiableList(calendars_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3219,6 +3846,112 @@ public final class Calendar {
       }
     }
 
+    public static final int EVENTLIST_FIELD_NUMBER = 7;
+    private java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> eventList_;
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventListList() {
+      return eventList_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+        getEventListOrBuilderList() {
+      return eventList_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    @java.lang.Override
+    public int getEventListCount() {
+      return eventList_.size();
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index) {
+      return eventList_.get(index);
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+        int index) {
+      return eventList_.get(index);
+    }
+
+    public static final int CALENDARS_FIELD_NUMBER = 8;
+    private java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> calendars_;
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> getCalendarsList() {
+      return calendars_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+        getCalendarsOrBuilderList() {
+      return calendars_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    @java.lang.Override
+    public int getCalendarsCount() {
+      return calendars_.size();
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index) {
+      return calendars_.get(index);
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
+        int index) {
+      return calendars_.get(index);
+    }
+
+    public static final int GROUP_FIELD_NUMBER = 9;
+    private via.sep3.viacalendar.gRPC.Calendar.GroupProto group_;
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     * @return Whether the group field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroup() {
+      return group_ != null;
+    }
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     * @return The group.
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroup() {
+      return group_ == null ? via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance() : group_;
+    }
+    /**
+     * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupOrBuilder() {
+      return getGroup();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3251,6 +3984,15 @@ public final class Calendar {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastName_);
       }
+      for (int i = 0; i < eventList_.size(); i++) {
+        output.writeMessage(7, eventList_.get(i));
+      }
+      for (int i = 0; i < calendars_.size(); i++) {
+        output.writeMessage(8, calendars_.get(i));
+      }
+      if (group_ != null) {
+        output.writeMessage(9, getGroup());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3279,6 +4021,18 @@ public final class Calendar {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastName_);
       }
+      for (int i = 0; i < eventList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, eventList_.get(i));
+      }
+      for (int i = 0; i < calendars_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, calendars_.get(i));
+      }
+      if (group_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getGroup());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3306,6 +4060,15 @@ public final class Calendar {
           .equals(other.getFirstName())) return false;
       if (!getLastName()
           .equals(other.getLastName())) return false;
+      if (!getEventListList()
+          .equals(other.getEventListList())) return false;
+      if (!getCalendarsList()
+          .equals(other.getCalendarsList())) return false;
+      if (hasGroup() != other.hasGroup()) return false;
+      if (hasGroup()) {
+        if (!getGroup()
+            .equals(other.getGroup())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3329,6 +4092,18 @@ public final class Calendar {
       hash = (53 * hash) + getFirstName().hashCode();
       hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getLastName().hashCode();
+      if (getEventListCount() > 0) {
+        hash = (37 * hash) + EVENTLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getEventListList().hashCode();
+      }
+      if (getCalendarsCount() > 0) {
+        hash = (37 * hash) + CALENDARS_FIELD_NUMBER;
+        hash = (53 * hash) + getCalendarsList().hashCode();
+      }
+      if (hasGroup()) {
+        hash = (37 * hash) + GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getGroup().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3457,6 +4232,8 @@ public final class Calendar {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getEventListFieldBuilder();
+          getCalendarsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3474,6 +4251,24 @@ public final class Calendar {
 
         lastName_ = "";
 
+        if (eventListBuilder_ == null) {
+          eventList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          eventListBuilder_.clear();
+        }
+        if (calendarsBuilder_ == null) {
+          calendars_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          calendarsBuilder_.clear();
+        }
+        if (groupBuilder_ == null) {
+          group_ = null;
+        } else {
+          group_ = null;
+          groupBuilder_ = null;
+        }
         return this;
       }
 
@@ -3500,12 +4295,36 @@ public final class Calendar {
       @java.lang.Override
       public via.sep3.viacalendar.gRPC.Calendar.UserProto buildPartial() {
         via.sep3.viacalendar.gRPC.Calendar.UserProto result = new via.sep3.viacalendar.gRPC.Calendar.UserProto(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.username_ = username_;
         result.email_ = email_;
         result.password_ = password_;
         result.firstName_ = firstName_;
         result.lastName_ = lastName_;
+        if (eventListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            eventList_ = java.util.Collections.unmodifiableList(eventList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.eventList_ = eventList_;
+        } else {
+          result.eventList_ = eventListBuilder_.build();
+        }
+        if (calendarsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            calendars_ = java.util.Collections.unmodifiableList(calendars_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.calendars_ = calendars_;
+        } else {
+          result.calendars_ = calendarsBuilder_.build();
+        }
+        if (groupBuilder_ == null) {
+          result.group_ = group_;
+        } else {
+          result.group_ = groupBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -3577,6 +4396,61 @@ public final class Calendar {
           lastName_ = other.lastName_;
           onChanged();
         }
+        if (eventListBuilder_ == null) {
+          if (!other.eventList_.isEmpty()) {
+            if (eventList_.isEmpty()) {
+              eventList_ = other.eventList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEventListIsMutable();
+              eventList_.addAll(other.eventList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.eventList_.isEmpty()) {
+            if (eventListBuilder_.isEmpty()) {
+              eventListBuilder_.dispose();
+              eventListBuilder_ = null;
+              eventList_ = other.eventList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              eventListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEventListFieldBuilder() : null;
+            } else {
+              eventListBuilder_.addAllMessages(other.eventList_);
+            }
+          }
+        }
+        if (calendarsBuilder_ == null) {
+          if (!other.calendars_.isEmpty()) {
+            if (calendars_.isEmpty()) {
+              calendars_ = other.calendars_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureCalendarsIsMutable();
+              calendars_.addAll(other.calendars_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.calendars_.isEmpty()) {
+            if (calendarsBuilder_.isEmpty()) {
+              calendarsBuilder_.dispose();
+              calendarsBuilder_ = null;
+              calendars_ = other.calendars_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              calendarsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCalendarsFieldBuilder() : null;
+            } else {
+              calendarsBuilder_.addAllMessages(other.calendars_);
+            }
+          }
+        }
+        if (other.hasGroup()) {
+          mergeGroup(other.getGroup());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3605,6 +4479,7 @@ public final class Calendar {
         }
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -4016,6 +4891,605 @@ public final class Calendar {
         onChanged();
         return this;
       }
+
+      private java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> eventList_ =
+        java.util.Collections.emptyList();
+      private void ensureEventListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          eventList_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.EventProto>(eventList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> eventListBuilder_;
+
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventListList() {
+        if (eventListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(eventList_);
+        } else {
+          return eventListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public int getEventListCount() {
+        if (eventListBuilder_ == null) {
+          return eventList_.size();
+        } else {
+          return eventListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index) {
+        if (eventListBuilder_ == null) {
+          return eventList_.get(index);
+        } else {
+          return eventListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder setEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.set(index, value);
+          onChanged();
+        } else {
+          eventListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder setEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder addEventList(via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.add(value);
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder addEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.add(index, value);
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder addEventList(
+          via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder addEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder addAllEventList(
+          java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.EventProto> values) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, eventList_);
+          onChanged();
+        } else {
+          eventListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder clearEventList() {
+        if (eventListBuilder_ == null) {
+          eventList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          eventListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public Builder removeEventList(int index) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.remove(index);
+          onChanged();
+        } else {
+          eventListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder getEventListBuilder(
+          int index) {
+        return getEventListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+          int index) {
+        if (eventListBuilder_ == null) {
+          return eventList_.get(index);  } else {
+          return eventListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+           getEventListOrBuilderList() {
+        if (eventListBuilder_ != null) {
+          return eventListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(eventList_);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventListBuilder() {
+        return getEventListFieldBuilder().addBuilder(
+            via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventListBuilder(
+          int index) {
+        return getEventListFieldBuilder().addBuilder(
+            index, via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 7;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder> 
+           getEventListBuilderList() {
+        return getEventListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+          getEventListFieldBuilder() {
+        if (eventListBuilder_ == null) {
+          eventListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder>(
+                  eventList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          eventList_ = null;
+        }
+        return eventListBuilder_;
+      }
+
+      private java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> calendars_ =
+        java.util.Collections.emptyList();
+      private void ensureCalendarsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          calendars_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.CalendarProto>(calendars_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.CalendarProto, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder, via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> calendarsBuilder_;
+
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> getCalendarsList() {
+        if (calendarsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(calendars_);
+        } else {
+          return calendarsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public int getCalendarsCount() {
+        if (calendarsBuilder_ == null) {
+          return calendars_.size();
+        } else {
+          return calendarsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index) {
+        if (calendarsBuilder_ == null) {
+          return calendars_.get(index);
+        } else {
+          return calendarsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder setCalendars(
+          int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
+        if (calendarsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCalendarsIsMutable();
+          calendars_.set(index, value);
+          onChanged();
+        } else {
+          calendarsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder setCalendars(
+          int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
+        if (calendarsBuilder_ == null) {
+          ensureCalendarsIsMutable();
+          calendars_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          calendarsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder addCalendars(via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
+        if (calendarsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCalendarsIsMutable();
+          calendars_.add(value);
+          onChanged();
+        } else {
+          calendarsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder addCalendars(
+          int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
+        if (calendarsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCalendarsIsMutable();
+          calendars_.add(index, value);
+          onChanged();
+        } else {
+          calendarsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder addCalendars(
+          via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
+        if (calendarsBuilder_ == null) {
+          ensureCalendarsIsMutable();
+          calendars_.add(builderForValue.build());
+          onChanged();
+        } else {
+          calendarsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder addCalendars(
+          int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
+        if (calendarsBuilder_ == null) {
+          ensureCalendarsIsMutable();
+          calendars_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          calendarsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder addAllCalendars(
+          java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProto> values) {
+        if (calendarsBuilder_ == null) {
+          ensureCalendarsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, calendars_);
+          onChanged();
+        } else {
+          calendarsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder clearCalendars() {
+        if (calendarsBuilder_ == null) {
+          calendars_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          calendarsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public Builder removeCalendars(int index) {
+        if (calendarsBuilder_ == null) {
+          ensureCalendarsIsMutable();
+          calendars_.remove(index);
+          onChanged();
+        } else {
+          calendarsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder getCalendarsBuilder(
+          int index) {
+        return getCalendarsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
+          int index) {
+        if (calendarsBuilder_ == null) {
+          return calendars_.get(index);  } else {
+          return calendarsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+           getCalendarsOrBuilderList() {
+        if (calendarsBuilder_ != null) {
+          return calendarsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(calendars_);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder addCalendarsBuilder() {
+        return getCalendarsFieldBuilder().addBuilder(
+            via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder addCalendarsBuilder(
+          int index) {
+        return getCalendarsFieldBuilder().addBuilder(
+            index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 8;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder> 
+           getCalendarsBuilderList() {
+        return getCalendarsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.CalendarProto, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder, via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+          getCalendarsFieldBuilder() {
+        if (calendarsBuilder_ == null) {
+          calendarsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              via.sep3.viacalendar.gRPC.Calendar.CalendarProto, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder, via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder>(
+                  calendars_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          calendars_ = null;
+        }
+        return calendarsBuilder_;
+      }
+
+      private via.sep3.viacalendar.gRPC.Calendar.GroupProto group_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.GroupProto, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder, via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> groupBuilder_;
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       * @return Whether the group field is set.
+       */
+      public boolean hasGroup() {
+        return groupBuilder_ != null || group_ != null;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       * @return The group.
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroup() {
+        if (groupBuilder_ == null) {
+          return group_ == null ? via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance() : group_;
+        } else {
+          return groupBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public Builder setGroup(via.sep3.viacalendar.gRPC.Calendar.GroupProto value) {
+        if (groupBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          group_ = value;
+          onChanged();
+        } else {
+          groupBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public Builder setGroup(
+          via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder builderForValue) {
+        if (groupBuilder_ == null) {
+          group_ = builderForValue.build();
+          onChanged();
+        } else {
+          groupBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public Builder mergeGroup(via.sep3.viacalendar.gRPC.Calendar.GroupProto value) {
+        if (groupBuilder_ == null) {
+          if (group_ != null) {
+            group_ =
+              via.sep3.viacalendar.gRPC.Calendar.GroupProto.newBuilder(group_).mergeFrom(value).buildPartial();
+          } else {
+            group_ = value;
+          }
+          onChanged();
+        } else {
+          groupBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public Builder clearGroup() {
+        if (groupBuilder_ == null) {
+          group_ = null;
+          onChanged();
+        } else {
+          group_ = null;
+          groupBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder getGroupBuilder() {
+        
+        onChanged();
+        return getGroupFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupOrBuilder() {
+        if (groupBuilder_ != null) {
+          return groupBuilder_.getMessageOrBuilder();
+        } else {
+          return group_ == null ?
+              via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance() : group_;
+        }
+      }
+      /**
+       * <code>.via.sep3.viacalendar.gRPC.GroupProto group = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.GroupProto, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder, via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> 
+          getGroupFieldBuilder() {
+        if (groupBuilder_ == null) {
+          groupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              via.sep3.viacalendar.gRPC.Calendar.GroupProto, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder, via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder>(
+                  getGroup(),
+                  getParentForChildren(),
+                  isClean());
+          group_ = null;
+        }
+        return groupBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4064,6 +5538,1778 @@ public final class Calendar {
 
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GroupProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.GroupProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @return A list containing the users.
+     */
+    java.util.List<java.lang.Integer> getUsersList();
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @return The count of users.
+     */
+    int getUsersCount();
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @param index The index of the element to return.
+     * @return The users at the given index.
+     */
+    int getUsers(int index);
+  }
+  /**
+   * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
+   */
+  public static final class GroupProto extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.GroupProto)
+      GroupProtoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GroupProto.newBuilder() to construct.
+    private GroupProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GroupProto() {
+      name_ = "";
+      users_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GroupProto();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GroupProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                users_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              users_.addInt(input.readInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                users_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                users_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          users_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              via.sep3.viacalendar.gRPC.Calendar.GroupProto.class, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERS_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList users_;
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @return A list containing the users.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUsersList() {
+      return users_;
+    }
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @return The count of users.
+     */
+    public int getUsersCount() {
+      return users_.size();
+    }
+    /**
+     * <code>repeated int32 users = 3;</code>
+     * @param index The index of the element to return.
+     * @return The users at the given index.
+     */
+    public int getUsers(int index) {
+      return users_.getInt(index);
+    }
+    private int usersMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (getUsersList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(usersMemoizedSerializedSize);
+      }
+      for (int i = 0; i < users_.size(); i++) {
+        output.writeInt32NoTag(users_.getInt(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < users_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(users_.getInt(i));
+        }
+        size += dataSize;
+        if (!getUsersList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        usersMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof via.sep3.viacalendar.gRPC.Calendar.GroupProto)) {
+        return super.equals(obj);
+      }
+      via.sep3.viacalendar.gRPC.Calendar.GroupProto other = (via.sep3.viacalendar.gRPC.Calendar.GroupProto) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUsersList()
+          .equals(other.getUsersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (getUsersCount() > 0) {
+        hash = (37 * hash) + USERS_FIELD_NUMBER;
+        hash = (53 * hash) + getUsersList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(via.sep3.viacalendar.gRPC.Calendar.GroupProto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.GroupProto)
+        via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                via.sep3.viacalendar.gRPC.Calendar.GroupProto.class, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder.class);
+      }
+
+      // Construct using via.sep3.viacalendar.gRPC.Calendar.GroupProto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        name_ = "";
+
+        users_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstanceForType() {
+        return via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProto build() {
+        via.sep3.viacalendar.gRPC.Calendar.GroupProto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.GroupProto buildPartial() {
+        via.sep3.viacalendar.gRPC.Calendar.GroupProto result = new via.sep3.viacalendar.gRPC.Calendar.GroupProto(this);
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.name_ = name_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          users_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.users_ = users_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof via.sep3.viacalendar.gRPC.Calendar.GroupProto) {
+          return mergeFrom((via.sep3.viacalendar.gRPC.Calendar.GroupProto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(via.sep3.viacalendar.gRPC.Calendar.GroupProto other) {
+        if (other == via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.users_.isEmpty()) {
+          if (users_.isEmpty()) {
+            users_ = other.users_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUsersIsMutable();
+            users_.addAll(other.users_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        via.sep3.viacalendar.gRPC.Calendar.GroupProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (via.sep3.viacalendar.gRPC.Calendar.GroupProto) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList users_ = emptyIntList();
+      private void ensureUsersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          users_ = mutableCopy(users_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @return A list containing the users.
+       */
+      public java.util.List<java.lang.Integer>
+          getUsersList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(users_) : users_;
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @return The count of users.
+       */
+      public int getUsersCount() {
+        return users_.size();
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @param index The index of the element to return.
+       * @return The users at the given index.
+       */
+      public int getUsers(int index) {
+        return users_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The users to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsers(
+          int index, int value) {
+        ensureUsersIsMutable();
+        users_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @param value The users to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUsers(int value) {
+        ensureUsersIsMutable();
+        users_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @param values The users to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUsers(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUsersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, users_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 users = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsers() {
+        users_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.GroupProto)
+    }
+
+    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.GroupProto)
+    private static final via.sep3.viacalendar.gRPC.Calendar.GroupProto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.GroupProto();
+    }
+
+    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GroupProto>
+        PARSER = new com.google.protobuf.AbstractParser<GroupProto>() {
+      @java.lang.Override
+      public GroupProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GroupProto(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GroupProto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupProto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CalendarProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.CalendarProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <code>int32 userId = 2;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> 
+        getEventListList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index);
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    int getEventListCount();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+        getEventListOrBuilderList();
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProto}
+   */
+  public static final class CalendarProto extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.CalendarProto)
+      CalendarProtoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CalendarProto.newBuilder() to construct.
+    private CalendarProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CalendarProto() {
+      eventList_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CalendarProto();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CalendarProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                eventList_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.EventProto>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              eventList_.add(
+                  input.readMessage(via.sep3.viacalendar.gRPC.Calendar.EventProto.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          eventList_ = java.util.Collections.unmodifiableList(eventList_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_CalendarProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              via.sep3.viacalendar.gRPC.Calendar.CalendarProto.class, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int USERID_FIELD_NUMBER = 2;
+    private int userId_;
+    /**
+     * <code>int32 userId = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int EVENTLIST_FIELD_NUMBER = 3;
+    private java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> eventList_;
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventListList() {
+      return eventList_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+        getEventListOrBuilderList() {
+      return eventList_;
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    @java.lang.Override
+    public int getEventListCount() {
+      return eventList_.size();
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index) {
+      return eventList_.get(index);
+    }
+    /**
+     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+     */
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+        int index) {
+      return eventList_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (userId_ != 0) {
+        output.writeInt32(2, userId_);
+      }
+      for (int i = 0; i < eventList_.size(); i++) {
+        output.writeMessage(3, eventList_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, userId_);
+      }
+      for (int i = 0; i < eventList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, eventList_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof via.sep3.viacalendar.gRPC.Calendar.CalendarProto)) {
+        return super.equals(obj);
+      }
+      via.sep3.viacalendar.gRPC.Calendar.CalendarProto other = (via.sep3.viacalendar.gRPC.Calendar.CalendarProto) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getEventListList()
+          .equals(other.getEventListList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      if (getEventListCount() > 0) {
+        hash = (37 * hash) + EVENTLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getEventListList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(via.sep3.viacalendar.gRPC.Calendar.CalendarProto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.CalendarProto)
+        via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_CalendarProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                via.sep3.viacalendar.gRPC.Calendar.CalendarProto.class, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder.class);
+      }
+
+      // Construct using via.sep3.viacalendar.gRPC.Calendar.CalendarProto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getEventListFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        userId_ = 0;
+
+        if (eventListBuilder_ == null) {
+          eventList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          eventListBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor;
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstanceForType() {
+        return via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto build() {
+        via.sep3.viacalendar.gRPC.Calendar.CalendarProto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public via.sep3.viacalendar.gRPC.Calendar.CalendarProto buildPartial() {
+        via.sep3.viacalendar.gRPC.Calendar.CalendarProto result = new via.sep3.viacalendar.gRPC.Calendar.CalendarProto(this);
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.userId_ = userId_;
+        if (eventListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            eventList_ = java.util.Collections.unmodifiableList(eventList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.eventList_ = eventList_;
+        } else {
+          result.eventList_ = eventListBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof via.sep3.viacalendar.gRPC.Calendar.CalendarProto) {
+          return mergeFrom((via.sep3.viacalendar.gRPC.Calendar.CalendarProto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(via.sep3.viacalendar.gRPC.Calendar.CalendarProto other) {
+        if (other == via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (eventListBuilder_ == null) {
+          if (!other.eventList_.isEmpty()) {
+            if (eventList_.isEmpty()) {
+              eventList_ = other.eventList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEventListIsMutable();
+              eventList_.addAll(other.eventList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.eventList_.isEmpty()) {
+            if (eventListBuilder_.isEmpty()) {
+              eventListBuilder_.dispose();
+              eventListBuilder_ = null;
+              eventList_ = other.eventList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              eventListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEventListFieldBuilder() : null;
+            } else {
+              eventListBuilder_.addAllMessages(other.eventList_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        via.sep3.viacalendar.gRPC.Calendar.CalendarProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (via.sep3.viacalendar.gRPC.Calendar.CalendarProto) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userId_ ;
+      /**
+       * <code>int32 userId = 2;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int32 userId = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> eventList_ =
+        java.util.Collections.emptyList();
+      private void ensureEventListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          eventList_ = new java.util.ArrayList<via.sep3.viacalendar.gRPC.Calendar.EventProto>(eventList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> eventListBuilder_;
+
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventListList() {
+        if (eventListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(eventList_);
+        } else {
+          return eventListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public int getEventListCount() {
+        if (eventListBuilder_ == null) {
+          return eventList_.size();
+        } else {
+          return eventListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto getEventList(int index) {
+        if (eventListBuilder_ == null) {
+          return eventList_.get(index);
+        } else {
+          return eventListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder setEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.set(index, value);
+          onChanged();
+        } else {
+          eventListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder setEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder addEventList(via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.add(value);
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder addEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
+        if (eventListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEventListIsMutable();
+          eventList_.add(index, value);
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder addEventList(
+          via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder addEventList(
+          int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          eventListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder addAllEventList(
+          java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.EventProto> values) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, eventList_);
+          onChanged();
+        } else {
+          eventListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder clearEventList() {
+        if (eventListBuilder_ == null) {
+          eventList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          eventListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public Builder removeEventList(int index) {
+        if (eventListBuilder_ == null) {
+          ensureEventListIsMutable();
+          eventList_.remove(index);
+          onChanged();
+        } else {
+          eventListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder getEventListBuilder(
+          int index) {
+        return getEventListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventListOrBuilder(
+          int index) {
+        if (eventListBuilder_ == null) {
+          return eventList_.get(index);  } else {
+          return eventListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+           getEventListOrBuilderList() {
+        if (eventListBuilder_ != null) {
+          return eventListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(eventList_);
+        }
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventListBuilder() {
+        return getEventListFieldBuilder().addBuilder(
+            via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventListBuilder(
+          int index) {
+        return getEventListFieldBuilder().addBuilder(
+            index, via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto eventList = 3;</code>
+       */
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder> 
+           getEventListBuilderList() {
+        return getEventListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+          getEventListFieldBuilder() {
+        if (eventListBuilder_ == null) {
+          eventListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder>(
+                  eventList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          eventList_ = null;
+        }
+        return eventListBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.CalendarProto)
+    }
+
+    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.CalendarProto)
+    private static final via.sep3.viacalendar.gRPC.Calendar.CalendarProto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.CalendarProto();
+    }
+
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CalendarProto>
+        PARSER = new com.google.protobuf.AbstractParser<CalendarProto>() {
+      @java.lang.Override
+      public CalendarProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CalendarProto(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CalendarProto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CalendarProto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5680,6 +8926,16 @@ public final class Calendar {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_via_sep3_viacalendar_gRPC_CalendarProto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5699,30 +8955,45 @@ public final class Calendar {
   static {
     java.lang.String[] descriptorData = {
       "\n\016Calendar.proto\022\031via.sep3.viacalendar.g" +
-      "RPC\032\031google/protobuf/any.proto\"\257\001\n\014Reque" +
-      "stProto\022<\n\007handler\030\001 \001(\0162+.via.sep3.viac" +
-      "alendar.gRPC.HandlerTypeProto\022:\n\006action\030" +
-      "\002 \001(\0162*.via.sep3.viacalendar.gRPC.Action" +
-      "TypeProto\022%\n\007payload\030\003 \001(\0132\024.google.prot" +
-      "obuf.Any\"r\n\rResponseProto\022:\n\006status\030\001 \001(" +
-      "\0162*.via.sep3.viacalendar.gRPC.StatusType" +
-      "Proto\022%\n\007payload\030\002 \001(\0132\024.google.protobuf" +
-      ".Any\"F\n\nEventProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002" +
-      " \001(\t\022\013\n\003tag\030\003 \001(\t\022\021\n\trecursive\030\004 \001(\010\"q\n\t" +
-      "UserProto\022\n\n\002id\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022" +
-      "\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\022\022\n\nfirs" +
-      "t_name\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t\"D\n\rUserP" +
-      "rotoList\0223\n\005users\030\001 \003(\0132$.via.sep3.viaca" +
-      "lendar.gRPC.UserProto\"G\n\016EventProtoList\022" +
-      "5\n\006events\030\001 \003(\0132%.via.sep3.viacalendar.g" +
-      "RPC.EventProto*L\n\020HandlerTypeProto\022\023\n\017HA" +
-      "NDLER_UNKNOWN\020\000\022\021\n\rHANDLER_EVENT\020\001\022\020\n\014HA" +
-      "NDLER_USER\020\002*\177\n\017ActionTypeProto\022\022\n\016ACTIO" +
-      "N_UNKNOWN\020\000\022\021\n\rACTION_CREATE\020\001\022\016\n\nACTION" +
-      "_GET\020\002\022\021\n\rACTION_UPDATE\020\003\022\021\n\rACTION_DELE" +
-      "TE\020\004\022\017\n\013ACTION_LIST\020\005*b\n\017StatusTypeProto" +
-      "\022\022\n\016STATUS_UNKNOWN\020\000\022\r\n\tSTATUS_OK\020\001\022\020\n\014S" +
-      "TATUS_ERROR\020\002\022\032\n\026STATUS_INVALID_PAYLOAD\020" +
+      "RPC\032\031google/protobuf/any.proto\032\037google/p" +
+      "rotobuf/timestamp.proto\"\257\001\n\014RequestProto" +
+      "\022<\n\007handler\030\001 \001(\0162+.via.sep3.viacalendar" +
+      ".gRPC.HandlerTypeProto\022:\n\006action\030\002 \001(\0162*" +
+      ".via.sep3.viacalendar.gRPC.ActionTypePro" +
+      "to\022%\n\007payload\030\003 \001(\0132\024.google.protobuf.An" +
+      "y\"r\n\rResponseProto\022:\n\006status\030\001 \001(\0162*.via" +
+      ".sep3.viacalendar.gRPC.StatusTypeProto\022%" +
+      "\n\007payload\030\002 \001(\0132\024.google.protobuf.Any\"\314\001" +
+      "\n\nEventProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\013" +
+      "\n\003tag\030\003 \001(\t\022\021\n\trecursive\030\004 \001(\010\022\021\n\tcreato" +
+      "rId\030\005 \001(\005\022,\n\010duration\030\006 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022C\n\017typeOfRecursive\030\007 \001(\016" +
+      "2*.via.sep3.viacalendar.gRPC.TypeOfRecur" +
+      "sive\"\236\002\n\tUserProto\022\n\n\002id\030\001 \001(\005\022\020\n\010userna" +
+      "me\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(" +
+      "\t\022\022\n\nfirst_name\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t" +
+      "\0228\n\teventList\030\007 \003(\0132%.via.sep3.viacalend" +
+      "ar.gRPC.EventProto\022;\n\tcalendars\030\010 \003(\0132(." +
+      "via.sep3.viacalendar.gRPC.CalendarProto\022" +
+      "4\n\005group\030\t \001(\0132%.via.sep3.viacalendar.gR" +
+      "PC.GroupProto\"5\n\nGroupProto\022\n\n\002id\030\001 \001(\005\022" +
+      "\014\n\004name\030\002 \001(\t\022\r\n\005users\030\003 \003(\005\"e\n\rCalendar" +
+      "Proto\022\n\n\002id\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\0228\n\teve" +
+      "ntList\030\003 \003(\0132%.via.sep3.viacalendar.gRPC" +
+      ".EventProto\"D\n\rUserProtoList\0223\n\005users\030\001 " +
+      "\003(\0132$.via.sep3.viacalendar.gRPC.UserProt" +
+      "o\"G\n\016EventProtoList\0225\n\006events\030\001 \003(\0132%.vi" +
+      "a.sep3.viacalendar.gRPC.EventProto*u\n\020Ha" +
+      "ndlerTypeProto\022\023\n\017HANDLER_UNKNOWN\020\000\022\021\n\rH" +
+      "ANDLER_EVENT\020\001\022\020\n\014HANDLER_USER\020\002\022\021\n\rHAND" +
+      "LER_GROUP\020\003\022\024\n\020HANDLER_CALENDAR\020\004*\177\n\017Act" +
+      "ionTypeProto\022\022\n\016ACTION_UNKNOWN\020\000\022\021\n\rACTI" +
+      "ON_CREATE\020\001\022\016\n\nACTION_GET\020\002\022\021\n\rACTION_UP" +
+      "DATE\020\003\022\021\n\rACTION_DELETE\020\004\022\017\n\013ACTION_LIST" +
+      "\020\005*b\n\017StatusTypeProto\022\022\n\016STATUS_UNKNOWN\020" +
+      "\000\022\r\n\tSTATUS_OK\020\001\022\020\n\014STATUS_ERROR\020\002\022\032\n\026ST" +
+      "ATUS_INVALID_PAYLOAD\020\003*9\n\017TypeOfRecursiv" +
+      "e\022\010\n\004NONE\020\000\022\007\n\003DAY\020\001\022\t\n\005MONTH\020\002\022\010\n\004YEAR\020" +
       "\0032x\n\024CalendarProtoService\022`\n\013SendRequest" +
       "\022\'.via.sep3.viacalendar.gRPC.RequestProt" +
       "o\032(.via.sep3.viacalendar.gRPC.ResponsePr" +
@@ -5732,6 +9003,7 @@ public final class Calendar {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_via_sep3_viacalendar_gRPC_RequestProto_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5750,26 +9022,39 @@ public final class Calendar {
     internal_static_via_sep3_viacalendar_gRPC_EventProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_EventProto_descriptor,
-        new java.lang.String[] { "Id", "Name", "Tag", "Recursive", });
+        new java.lang.String[] { "Id", "Name", "Tag", "Recursive", "CreatorId", "Duration", "TypeOfRecursive", });
     internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor,
-        new java.lang.String[] { "Id", "Username", "Email", "Password", "FirstName", "LastName", });
-    internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor =
+        new java.lang.String[] { "Id", "Username", "Email", "Password", "FirstName", "LastName", "EventList", "Calendars", "Group", });
+    internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor,
+        new java.lang.String[] { "Id", "Name", "Users", });
+    internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_via_sep3_viacalendar_gRPC_CalendarProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_via_sep3_viacalendar_gRPC_CalendarProto_descriptor,
+        new java.lang.String[] { "Id", "UserId", "EventList", });
+    internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_via_sep3_viacalendar_gRPC_UserProtoList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor,
         new java.lang.String[] { "Users", });
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_EventProtoList_descriptor,
         new java.lang.String[] { "Events", });
     com.google.protobuf.AnyProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

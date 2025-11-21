@@ -1,6 +1,9 @@
 package via.sep3.viacalendar.model;
 
 import jakarta.persistence.*;
+import via.sep3.viacalendar.gRPC.Calendar.GroupProto;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "groups", schema = "via_calendar")
@@ -12,6 +15,24 @@ public class Group {
 
     @Column(name = "name", nullable = false, length = 100)
     private String name;
+
+    @OneToMany(mappedBy = "group")
+    private Set<User> users = new LinkedHashSet<>();
+
+    public Group(){};//default
+
+    public Group(GroupProto proto){
+        id = proto.getId();
+        name = proto.getName();
+    };
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 
     public Integer getId() {
         return id;

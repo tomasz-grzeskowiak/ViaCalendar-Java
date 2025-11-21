@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.time.Instant;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table (name = "events", schema = "via_calendar")
 public class Event {
@@ -21,6 +25,42 @@ public class Event {
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "creator_id")
     private User creator;
+
+    @Column(name = "duration")
+    private Instant duration;
+
+    @Column(name = "type_of_recursive", length = 5)
+    private String typeOfRecursive;
+
+    @ManyToMany
+    @JoinTable(name = "calendar_events",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "calendar_id"))
+    private Set<Calendar> calendars = new LinkedHashSet<>();
+
+    public Set<Calendar> getCalendars() {
+        return calendars;
+    }
+
+    public void setCalendars(Set<Calendar> calendars) {
+        this.calendars = calendars;
+    }
+
+    public String getTypeOfRecursive() {
+        return typeOfRecursive;
+    }
+
+    public void setTypeOfRecursive(String typeOfRecursive) {
+        this.typeOfRecursive = typeOfRecursive;
+    }
+
+    public Instant getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Instant duration) {
+        this.duration = duration;
+    }
 
     public User getCreator() {
         return creator;
