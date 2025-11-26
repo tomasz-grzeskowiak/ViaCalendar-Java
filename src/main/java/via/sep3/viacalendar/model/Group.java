@@ -21,6 +21,11 @@ public class Group {
 
     public Group(){};//default
 
+    /**
+     * Constructor for Group.
+     * @implNote Set users gotten from the database manually.
+     * @param proto
+     */
     public Group(GroupProto proto){
         id = proto.getId();
         name = proto.getName();

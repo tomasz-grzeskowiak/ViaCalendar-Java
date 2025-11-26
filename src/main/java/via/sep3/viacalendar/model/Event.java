@@ -3,6 +3,8 @@ package via.sep3.viacalendar.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import via.sep3.viacalendar.gRPC.Calendar.EventProto;
+import via.sep3.viacalendar.utils.ProtoUtilities;
 
 import java.time.Instant;
 import java.util.LinkedHashSet;
@@ -24,10 +26,10 @@ public class Event {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "creator_id")
-    private User creator;
+    private User creator = new User();
 
     @Column(name = "duration")
-    private Instant duration;
+    private Instant duration ;
 
     @Column(name = "type_of_recursive", length = 5)
     private String typeOfRecursive;
@@ -37,6 +39,18 @@ public class Event {
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "calendar_id"))
     private Set<Calendar> calendars = new LinkedHashSet<>();
+    public Event(){}//default constructor
+    public Event(EventProto proto){
+
+        this.name = proto.getName();
+        this.tag = proto.getTag();
+        this.recursive = proto.getRecursive();
+        this.eventId = proto.getId();
+        //set creator after user is retrieved from database
+        //set calendars after calendar is retrieved from database
+        this.duration = proto.getDuration().getSeconds() > 0 ? Instant.ofEpochSecond(proto.getDuration().getSeconds()) : null;//convert it from proto to Instant
+        this.typeOfRecursive = ProtoUtilities.parseTypeOfRecursiveToString(proto.getTypeOfRecursive());
+    }
 
     public Set<Calendar> getCalendars() {
         return calendars;
@@ -99,4 +113,15 @@ public class Event {
         this.recursive = recursive;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", name='" + name + '\'' +
+                ", tag='" + tag + '\'' +
+                ", recursive=" + recursive +
+                ", duration=" + duration +
+                ", typeOfRecursive='" + typeOfRecursive + '\'' +
+                '}';
+    }
 }

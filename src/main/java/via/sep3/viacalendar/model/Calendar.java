@@ -3,6 +3,7 @@ package via.sep3.viacalendar.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import via.sep3.viacalendar.gRPC.Calendar.CalendarProto;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -22,6 +23,9 @@ public class Calendar {
 
     @ManyToMany(mappedBy = "calendars")
     private Set<Event> events = new LinkedHashSet<>();
+    public Calendar(){}; //default constructor
+    public Calendar(CalendarProto proto){
+    }
 
     public Set<Event> getEvents() {
         return events;
