@@ -8,6 +8,7 @@ enum HandlerTypeProto {
   HANDLER_UNKNOWN = 0;
   HANDLER_EVENT = 1;
   HANDLER_USER = 2;
+  HANDLER_GROUP = 3;
 }
 
 enum ActionTypeProto {
@@ -42,6 +43,11 @@ message EventProto {
 
 }
 
+message GroupProto {
+  int32 id = 1;
+  string name = 2;
+}
+
 message UserProto {
   int32 id = 1;
   string username = 2;
@@ -61,4 +67,8 @@ service CalendarProtoService {
 
 message EventProtoList {
   repeated EventProto events = 1;
+}
+
+message GroupProtoList {
+  repeated GroupProto groups = 1;
 }
