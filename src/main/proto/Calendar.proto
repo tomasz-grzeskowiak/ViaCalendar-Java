@@ -47,6 +47,11 @@ message EventProto {
   TypeOfRecursiveProto typeOfRecursive = 7;
 }
 
+message GroupProto {
+  int32 id = 1;
+  string name = 2;
+}
+
 message UserProto {
   int32 id = 1;
   string username = 2;
@@ -84,4 +89,8 @@ enum TypeOfRecursiveProto {
   DAY = 1;
   MONTH = 2;
   YEAR= 3;
+}
+
+message GroupProtoList {
+  repeated GroupProto groups = 1;
 }
