@@ -3,8 +3,11 @@ package via.sep3.viacalendar.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import via.sep3.viacalendar.gRPC.Calendar.UserProto;
 
+import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -40,7 +43,24 @@ public class User {
 
     @OneToMany(mappedBy = "creator")
     private Set<Event> events = new LinkedHashSet<>();
+    public User(){} //default constructor
 
+    /**
+     * Constructor for User.
+     * @implNote Set calendars, events and group after retrieved from database manually.
+     * @param proto
+     */
+    public User(UserProto proto){
+        this.id = proto.getId();
+        this.username = proto.getUsername();
+        this.email = proto.getEmail();
+        this.password = proto.getPassword();
+        this.firstName = proto.getFirstName();
+        this.lastName = proto.getLastName();
+        //set calendars after calendar is retrieved from database
+        //set events after event is retrieved from database
+        //set group after group is retrieved from database
+    }
     public Integer getId() {
         return id;
     }
@@ -101,16 +121,28 @@ public class User {
         return calendars;
     }
 
-    public void setCalendars(Set<Calendar> calendars) {
-        this.calendars = calendars;
+    public void setCalendars(List<Calendar> calendars) {
+        this.calendars = new LinkedHashSet<>(calendars);
+
     }
 
     public Set<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(Set<Event> events) {
-        this.events = events;
+    public void setEvents(List<Event> events) {
+        this.events = new LinkedHashSet<>(events);
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }

@@ -3,6 +3,10 @@ package via.sep3.viacalendar.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import via.sep3.viacalendar.gRPC.Calendar.CalendarProto;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "calendars", schema = "via_calendar")
@@ -16,6 +20,20 @@ public class Calendar {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToMany(mappedBy = "calendars")
+    private Set<Event> events = new LinkedHashSet<>();
+    public Calendar(){}; //default constructor
+    public Calendar(CalendarProto proto){
+    }
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
+    }
 
     public Integer getId() {
         return id;

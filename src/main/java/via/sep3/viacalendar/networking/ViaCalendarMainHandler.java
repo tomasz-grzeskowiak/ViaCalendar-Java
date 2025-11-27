@@ -5,6 +5,8 @@ import com.google.protobuf.Message;
 import com.google.protobuf.StringValue;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.RequestProto;
@@ -19,6 +21,7 @@ import java.util.Map;
 @GRpcService
 public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarProtoServiceImplBase {
     private final Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider;
+    private final Logger logger = LoggerFactory.getLogger(ViaCalendarMainHandler.class);
 
     public ViaCalendarMainHandler(Map<HandlerTypeProto, ViaCalendarHandler> serviceProvider) {
         this.serviceProvider = serviceProvider;
@@ -27,8 +30,10 @@ public class ViaCalendarMainHandler extends CalendarProtoServiceGrpc.CalendarPro
     public void sendRequest(RequestProto request, StreamObserver<ResponseProto> responseObserver) {
         try {
             // Route request based on HandlerType
+            logger.info("Received request: " + request.toString());
             ViaCalendarHandler handler = serviceProvider.get(request.getHandler());
             if (handler == null) {
+                logger.error("Unknown handler type: " + request.getHandler());
                 throw new IllegalArgumentException("Unknown handler type");
             }
             // Message is the protobuf object

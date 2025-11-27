@@ -1,12 +1,15 @@
 package via.sep3.viacalendar.networking;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 @Component
 public class ViaServer {
+    private static final Logger log = LoggerFactory.getLogger(ViaServer.class);
     private static final int PORT = 6032;
     private final ViaCalendarMainHandler mainHandler;
     private Server grpcServer;
@@ -21,17 +24,16 @@ public class ViaServer {
                         .addService(mainHandler)
                         .build()
                         .start();
-
-                System.out.println("Calendar gRPC Server started on port " + PORT);
+                log.info("Calendar gRPC Server started on port " + PORT);
 
                 Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-                    System.err.println("Shutting down gRPC server...");
+                    log.error("Shutting down gRPC server...");
                     if (grpcServer != null) grpcServer.shutdown();
                 }));
 
                 grpcServer.awaitTermination(); // keep server alive
             } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
+                log.info(e.getMessage());
             }
         }, "gRPC-Server-Thread");
 
