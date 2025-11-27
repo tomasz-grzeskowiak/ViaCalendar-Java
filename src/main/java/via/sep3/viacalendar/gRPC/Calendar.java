@@ -3353,8 +3353,8 @@ public final class Calendar {
 
   }
 
-  public interface GroupProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.GroupProto)
+  public interface UserProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.UserProto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3364,13 +3364,61 @@ public final class Calendar {
     int getId();
 
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>string username = 2;</code>
+     * @return The username.
      */
-    java.lang.String getName();
+    java.lang.String getUsername();
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string email = 3;</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 3;</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string password = 4;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 4;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>string first_name = 5;</code>
+     * @return The firstName.
+     */
+    java.lang.String getFirstName();
+    /**
+     * <code>string first_name = 5;</code>
+     * @return The bytes for firstName.
+     */
+    com.google.protobuf.ByteString
+        getFirstNameBytes();
+
+    /**
+     * <code>string last_name = 6;</code>
+     * @return The lastName.
+     */
+    java.lang.String getLastName();
+    /**
+     * <code>string last_name = 6;</code>
+     * @return The bytes for lastName.
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
@@ -3414,18 +3462,17 @@ public final class Calendar {
      * @return The groupId.
      */
     int getGroupId();
-        getNameBytes();
   }
   /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
+   * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
    */
-  public static final class GroupProto extends
+  public static final class UserProto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.GroupProto)
-      GroupProtoOrBuilder {
+      // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.UserProto)
+      UserProtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GroupProto.newBuilder() to construct.
-    private GroupProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserProto.newBuilder() to construct.
+    private UserProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private UserProto() {
@@ -3436,15 +3483,13 @@ public final class Calendar {
       lastName_ = "";
       eventIds_ = emptyIntList();
       calendarsIds_ = emptyIntList();
-    private GroupProto() {
-      name_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GroupProto();
+      return new UserProto();
     }
 
     @java.lang.Override
@@ -3452,7 +3497,7 @@ public final class Calendar {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupProto(
+    private UserProto(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3479,7 +3524,31 @@ public final class Calendar {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              username_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              firstName_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lastName_ = s;
               break;
             }
             case 56: {
@@ -3558,15 +3627,15 @@ public final class Calendar {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable
+      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              via.sep3.viacalendar.gRPC.Calendar.GroupProto.class, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder.class);
+              via.sep3.viacalendar.gRPC.Calendar.UserProto.class, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3580,89 +3649,117 @@ public final class Calendar {
       return id_;
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>string username = 2;</code>
+     * @return The username.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    private byte memoizedIsInitialized = -1;
+    public static final int EMAIL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string email = 3;</code>
+     * @return The email.
+     */
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 3;</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    public static final int PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 4;</code>
+     * @return The password.
+     */
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      unknownFields.writeTo(output);
     }
-
+    /**
+     * <code>string password = 4;</code>
+     * @return The bytes for password.
+     */
     @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
 
@@ -3952,15 +4049,6 @@ public final class Calendar {
           .equals(other.getCalendarsIdsList())) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
-      if (!(obj instanceof via.sep3.viacalendar.gRPC.Calendar.GroupProto)) {
-        return super.equals(obj);
-      }
-      via.sep3.viacalendar.gRPC.Calendar.GroupProto other = (via.sep3.viacalendar.gRPC.Calendar.GroupProto) obj;
-
-      if (getId()
-          != other.getId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3994,76 +4082,74 @@ public final class Calendar {
       }
       hash = (37 * hash) + GROUPID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(byte[] data)
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(java.io.InputStream input)
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseDelimitedFrom(java.io.InputStream input)
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseDelimitedFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto parseFrom(
+    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4076,7 +4162,7 @@ public final class Calendar {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(via.sep3.viacalendar.gRPC.Calendar.GroupProto prototype) {
+    public static Builder newBuilder(via.sep3.viacalendar.gRPC.Calendar.UserProto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4092,26 +4178,26 @@ public final class Calendar {
       return builder;
     }
     /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
+     * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.GroupProto)
-        via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.UserProto)
+        via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                via.sep3.viacalendar.gRPC.Calendar.GroupProto.class, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder.class);
+                via.sep3.viacalendar.gRPC.Calendar.UserProto.class, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder.class);
       }
 
-      // Construct using via.sep3.viacalendar.gRPC.Calendar.GroupProto.newBuilder()
+      // Construct using via.sep3.viacalendar.gRPC.Calendar.UserProto.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4131,7 +4217,15 @@ public final class Calendar {
         super.clear();
         id_ = 0;
 
-        name_ = "";
+        username_ = "";
+
+        email_ = "";
+
+        password_ = "";
+
+        firstName_ = "";
+
+        lastName_ = "";
 
         eventIds_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4145,17 +4239,17 @@ public final class Calendar {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
+        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
       }
 
       @java.lang.Override
-      public via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstanceForType() {
-        return via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance();
+      public via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstanceForType() {
+        return via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public via.sep3.viacalendar.gRPC.Calendar.GroupProto build() {
-        via.sep3.viacalendar.gRPC.Calendar.GroupProto result = buildPartial();
+      public via.sep3.viacalendar.gRPC.Calendar.UserProto build() {
+        via.sep3.viacalendar.gRPC.Calendar.UserProto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4183,10 +4277,6 @@ public final class Calendar {
         }
         result.calendarsIds_ = calendarsIds_;
         result.groupId_ = groupId_;
-      public via.sep3.viacalendar.gRPC.Calendar.GroupProto buildPartial() {
-        via.sep3.viacalendar.gRPC.Calendar.GroupProto result = new via.sep3.viacalendar.gRPC.Calendar.GroupProto(this);
-        result.id_ = id_;
-        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -4225,21 +4315,37 @@ public final class Calendar {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof via.sep3.viacalendar.gRPC.Calendar.GroupProto) {
-          return mergeFrom((via.sep3.viacalendar.gRPC.Calendar.GroupProto)other);
+        if (other instanceof via.sep3.viacalendar.gRPC.Calendar.UserProto) {
+          return mergeFrom((via.sep3.viacalendar.gRPC.Calendar.UserProto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(via.sep3.viacalendar.gRPC.Calendar.GroupProto other) {
-        if (other == via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance()) return this;
+      public Builder mergeFrom(via.sep3.viacalendar.gRPC.Calendar.UserProto other) {
+        if (other == via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance()) return this;
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        if (!other.getFirstName().isEmpty()) {
+          firstName_ = other.firstName_;
+          onChanged();
+        }
+        if (!other.getLastName().isEmpty()) {
+          lastName_ = other.lastName_;
           onChanged();
         }
         if (!other.eventIds_.isEmpty()) {
@@ -4280,11 +4386,11 @@ public final class Calendar {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        via.sep3.viacalendar.gRPC.Calendar.GroupProto parsedMessage = null;
+        via.sep3.viacalendar.gRPC.Calendar.UserProto parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (via.sep3.viacalendar.gRPC.Calendar.GroupProto) e.getUnfinishedMessage();
+          parsedMessage = (via.sep3.viacalendar.gRPC.Calendar.UserProto) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4326,115 +4432,115 @@ public final class Calendar {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>string name = 2;</code>
-       * @return The name.
+       * <code>string username = 2;</code>
+       * @return The username.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
+       * <code>string username = 2;</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
+       * <code>string username = 2;</code>
+       * @param value The username to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string username = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
+      public Builder clearUsername() {
         
-        name_ = getDefaultInstance().getName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
+       * <code>string username = 2;</code>
+       * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 3;</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.GroupProto)
-    }
-
-    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.GroupProto)
-    private static final via.sep3.viacalendar.gRPC.Calendar.GroupProto DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.GroupProto();
-    }
-
-    public static via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GroupProto>
-        PARSER = new com.google.protobuf.AbstractParser<GroupProto>() {
-      @java.lang.Override
-      public GroupProto parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupProto(input, extensionRegistry);
+      /**
+       * <code>string email = 3;</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <code>string email = 3;</code>
@@ -4932,21 +5038,16 @@ public final class Calendar {
     };
 
     public static com.google.protobuf.Parser<UserProto> parser() {
-    };
-
-    public static com.google.protobuf.Parser<GroupProto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
     public com.google.protobuf.Parser<UserProto> getParserForType() {
-    public com.google.protobuf.Parser<GroupProto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstanceForType() {
-    public via.sep3.viacalendar.gRPC.Calendar.GroupProto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4954,8 +5055,6 @@ public final class Calendar {
 
   public interface GroupProtoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.GroupProto)
-  public interface UserProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.UserProto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6494,1181 +6593,6 @@ public final class Calendar {
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
-     * <code>string username = 2;</code>
-     * @return The username.
-     */
-    java.lang.String getUsername();
-    /**
-     * <code>string username = 2;</code>
-     * @return The bytes for username.
-     */
-    com.google.protobuf.ByteString
-        getUsernameBytes();
-
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
-
-    /**
-     * <code>string password = 4;</code>
-     * @return The password.
-     */
-    java.lang.String getPassword();
-    /**
-     * <code>string password = 4;</code>
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The firstName.
-     */
-    java.lang.String getFirstName();
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The bytes for firstName.
-     */
-    com.google.protobuf.ByteString
-        getFirstNameBytes();
-
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The lastName.
-     */
-    java.lang.String getLastName();
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The bytes for lastName.
-     */
-    com.google.protobuf.ByteString
-        getLastNameBytes();
-  }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
-   */
-  public static final class UserProto extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.UserProto)
-      UserProtoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use UserProto.newBuilder() to construct.
-    private UserProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UserProto() {
-      username_ = "";
-      email_ = "";
-      password_ = "";
-      firstName_ = "";
-      lastName_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new UserProto();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private UserProto(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              password_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firstName_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              via.sep3.viacalendar.gRPC.Calendar.UserProto.class, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object username_;
-    /**
-     * <code>string username = 2;</code>
-     * @return The username.
-     */
-    @java.lang.Override
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string username = 2;</code>
-     * @return The bytes for username.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 4;
-    private volatile java.lang.Object password_;
-    /**
-     * <code>string password = 4;</code>
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string password = 4;</code>
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FIRST_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object firstName_;
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The firstName.
-     */
-    @java.lang.Override
-    public java.lang.String getFirstName() {
-      java.lang.Object ref = firstName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        firstName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The bytes for firstName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      java.lang.Object ref = firstName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        firstName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LAST_NAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object lastName_;
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The lastName.
-     */
-    @java.lang.Override
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The bytes for lastName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, firstName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastName_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, firstName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastName_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof via.sep3.viacalendar.gRPC.Calendar.UserProto)) {
-        return super.equals(obj);
-      }
-      via.sep3.viacalendar.gRPC.Calendar.UserProto other = (via.sep3.viacalendar.gRPC.Calendar.UserProto) obj;
-
-      if (getId()
-          != other.getId()) return false;
-      if (!getUsername()
-          .equals(other.getUsername())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
-      if (!getFirstName()
-          .equals(other.getFirstName())) return false;
-      if (!getLastName()
-          .equals(other.getLastName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstName().hashCode();
-      hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLastName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(via.sep3.viacalendar.gRPC.Calendar.UserProto prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.UserProto)
-        via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                via.sep3.viacalendar.gRPC.Calendar.UserProto.class, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder.class);
-      }
-
-      // Construct using via.sep3.viacalendar.gRPC.Calendar.UserProto.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        id_ = 0;
-
-        username_ = "";
-
-        email_ = "";
-
-        password_ = "";
-
-        firstName_ = "";
-
-        lastName_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return via.sep3.viacalendar.gRPC.Calendar.internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
-      }
-
-      @java.lang.Override
-      public via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstanceForType() {
-        return via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public via.sep3.viacalendar.gRPC.Calendar.UserProto build() {
-        via.sep3.viacalendar.gRPC.Calendar.UserProto result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public via.sep3.viacalendar.gRPC.Calendar.UserProto buildPartial() {
-        via.sep3.viacalendar.gRPC.Calendar.UserProto result = new via.sep3.viacalendar.gRPC.Calendar.UserProto(this);
-        result.id_ = id_;
-        result.username_ = username_;
-        result.email_ = email_;
-        result.password_ = password_;
-        result.firstName_ = firstName_;
-        result.lastName_ = lastName_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof via.sep3.viacalendar.gRPC.Calendar.UserProto) {
-          return mergeFrom((via.sep3.viacalendar.gRPC.Calendar.UserProto)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(via.sep3.viacalendar.gRPC.Calendar.UserProto other) {
-        if (other == via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
-          onChanged();
-        }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          onChanged();
-        }
-        if (!other.getPassword().isEmpty()) {
-          password_ = other.password_;
-          onChanged();
-        }
-        if (!other.getFirstName().isEmpty()) {
-          firstName_ = other.firstName_;
-          onChanged();
-        }
-        if (!other.getLastName().isEmpty()) {
-          lastName_ = other.lastName_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        via.sep3.viacalendar.gRPC.Calendar.UserProto parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (via.sep3.viacalendar.gRPC.Calendar.UserProto) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object username_ = "";
-      /**
-       * <code>string username = 2;</code>
-       * @return The username.
-       */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          username_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string username = 2;</code>
-       * @return The bytes for username.
-       */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
-        java.lang.Object ref = username_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          username_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string username = 2;</code>
-       * @param value The username to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsername(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        username_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string username = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUsername() {
-        
-        username_ = getDefaultInstance().getUsername();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string username = 2;</code>
-       * @param value The bytes for username to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsernameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        username_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 3;</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        email_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <code>string password = 4;</code>
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string password = 4;</code>
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string password = 4;</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 4;</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object firstName_ = "";
-      /**
-       * <code>string first_name = 5;</code>
-       * @return The firstName.
-       */
-      public java.lang.String getFirstName() {
-        java.lang.Object ref = firstName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firstName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 5;</code>
-       * @return The bytes for firstName.
-       */
-      public com.google.protobuf.ByteString
-          getFirstNameBytes() {
-        java.lang.Object ref = firstName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firstName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string first_name = 5;</code>
-       * @param value The firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstName() {
-        
-        firstName_ = getDefaultInstance().getFirstName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string first_name = 5;</code>
-       * @param value The bytes for firstName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object lastName_ = "";
-      /**
-       * <code>string last_name = 6;</code>
-       * @return The lastName.
-       */
-      public java.lang.String getLastName() {
-        java.lang.Object ref = lastName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lastName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 6;</code>
-       * @return The bytes for lastName.
-       */
-      public com.google.protobuf.ByteString
-          getLastNameBytes() {
-        java.lang.Object ref = lastName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lastName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string last_name = 6;</code>
-       * @param value The lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLastName() {
-        
-        lastName_ = getDefaultInstance().getLastName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_name = 6;</code>
-       * @param value The bytes for lastName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lastName_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7683,41 +6607,41 @@ public final class Calendar {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.UserProto)
+      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.CalendarProto)
     }
 
-    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.UserProto)
-    private static final via.sep3.viacalendar.gRPC.Calendar.UserProto DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.CalendarProto)
+    private static final via.sep3.viacalendar.gRPC.Calendar.CalendarProto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.UserProto();
+      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.CalendarProto();
     }
 
-    public static via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstance() {
+    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserProto>
-        PARSER = new com.google.protobuf.AbstractParser<UserProto>() {
+    private static final com.google.protobuf.Parser<CalendarProto>
+        PARSER = new com.google.protobuf.AbstractParser<CalendarProto>() {
       @java.lang.Override
-      public UserProto parsePartialFrom(
+      public CalendarProto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserProto(input, extensionRegistry);
+        return new CalendarProto(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UserProto> parser() {
+    public static com.google.protobuf.Parser<CalendarProto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserProto> getParserForType() {
+    public com.google.protobuf.Parser<CalendarProto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public via.sep3.viacalendar.gRPC.Calendar.UserProto getDefaultInstanceForType() {
+    public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8478,31 +7402,6 @@ public final class Calendar {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.CalendarProto)
-    }
-
-    // @@protoc_insertion_point(class_scope:via.sep3.viacalendar.gRPC.CalendarProto)
-    private static final via.sep3.viacalendar.gRPC.Calendar.CalendarProto DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new via.sep3.viacalendar.gRPC.Calendar.CalendarProto();
-    }
-
-    public static via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CalendarProto>
-        PARSER = new com.google.protobuf.AbstractParser<CalendarProto>() {
-      @java.lang.Override
-      public CalendarProto parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CalendarProto(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CalendarProto> parser() {
       // @@protoc_insertion_point(builder_scope:via.sep3.viacalendar.gRPC.UserProtoList)
     }
 
@@ -8532,13 +7431,11 @@ public final class Calendar {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CalendarProto> getParserForType() {
     public com.google.protobuf.Parser<UserProtoList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getDefaultInstanceForType() {
     public via.sep3.viacalendar.gRPC.Calendar.UserProtoList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10151,11 +9048,6 @@ public final class Calendar {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_via_sep3_viacalendar_gRPC_EventProto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -10220,51 +9112,22 @@ public final class Calendar {
       "\0223\n\005users\030\001 \003(\0132$.via.sep3.viacalendar.g" +
       "RPC.UserProto\"G\n\016EventProtoList\0225\n\006event" +
       "s\030\001 \003(\0132%.via.sep3.viacalendar.gRPC.Even" +
-      "tProto*u\n\020HandlerTypeProto\022\023\n\017HANDLER_UN" +
-      "KNOWN\020\000\022\021\n\rHANDLER_EVENT\020\001\022\020\n\014HANDLER_US" +
-      "ER\020\002\022\021\n\rHANDLER_GROUP\020\003\022\024\n\020HANDLER_CALEN" +
-      "DAR\020\004*\177\n\017ActionTypeProto\022\022\n\016ACTION_UNKNO" +
-      "WN\020\000\022\021\n\rACTION_CREATE\020\001\022\016\n\nACTION_GET\020\002\022" +
-      "\021\n\rACTION_UPDATE\020\003\022\021\n\rACTION_DELETE\020\004\022\017\n" +
-      "\013ACTION_LIST\020\005*b\n\017StatusTypeProto\022\022\n\016STA" +
-      "TUS_UNKNOWN\020\000\022\r\n\tSTATUS_OK\020\001\022\020\n\014STATUS_E" +
-      "RROR\020\002\022\032\n\026STATUS_INVALID_PAYLOAD\020\003*>\n\024Ty" +
-      "peOfRecursiveProto\022\010\n\004NONE\020\000\022\007\n\003DAY\020\001\022\t\n" +
-      "\005MONTH\020\002\022\010\n\004YEAR\020\0032x\n\024CalendarProtoServi" +
-      "ce\022`\n\013SendRequest\022\'.via.sep3.viacalendar" +
-      ".gRPC.RequestProto\032(.via.sep3.viacalenda" +
-      "r.gRPC.ResponseProtob\006proto3"
-      "RPC\032\031google/protobuf/any.proto\"\257\001\n\014Reque" +
-      "stProto\022<\n\007handler\030\001 \001(\0162+.via.sep3.viac" +
-      "alendar.gRPC.HandlerTypeProto\022:\n\006action\030" +
-      "\002 \001(\0162*.via.sep3.viacalendar.gRPC.Action" +
-      "TypeProto\022%\n\007payload\030\003 \001(\0132\024.google.prot" +
-      "obuf.Any\"r\n\rResponseProto\022:\n\006status\030\001 \001(" +
-      "\0162*.via.sep3.viacalendar.gRPC.StatusType" +
-      "Proto\022%\n\007payload\030\002 \001(\0132\024.google.protobuf" +
-      ".Any\"F\n\nEventProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002" +
-      " \001(\t\022\013\n\003tag\030\003 \001(\t\022\021\n\trecursive\030\004 \001(\010\"&\n\n" +
-      "GroupProto\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\"q\n\t" +
-      "UserProto\022\n\n\002id\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\022" +
-      "\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\022\022\n\nfirs" +
-      "t_name\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t\"D\n\rUserP" +
-      "rotoList\0223\n\005users\030\001 \003(\0132$.via.sep3.viaca" +
-      "lendar.gRPC.UserProto\"G\n\016EventProtoList\022" +
-      "5\n\006events\030\001 \003(\0132%.via.sep3.viacalendar.g" +
-      "RPC.EventProto\"G\n\016GroupProtoList\0225\n\006grou" +
-      "ps\030\001 \003(\0132%.via.sep3.viacalendar.gRPC.Gro" +
-      "upProto*_\n\020HandlerTypeProto\022\023\n\017HANDLER_U" +
-      "NKNOWN\020\000\022\021\n\rHANDLER_EVENT\020\001\022\020\n\014HANDLER_U" +
-      "SER\020\002\022\021\n\rHANDLER_GROUP\020\003*\177\n\017ActionTypePr" +
-      "oto\022\022\n\016ACTION_UNKNOWN\020\000\022\021\n\rACTION_CREATE" +
-      "\020\001\022\016\n\nACTION_GET\020\002\022\021\n\rACTION_UPDATE\020\003\022\021\n" +
-      "\rACTION_DELETE\020\004\022\017\n\013ACTION_LIST\020\005*b\n\017Sta" +
-      "tusTypeProto\022\022\n\016STATUS_UNKNOWN\020\000\022\r\n\tSTAT" +
-      "US_OK\020\001\022\020\n\014STATUS_ERROR\020\002\022\032\n\026STATUS_INVA" +
-      "LID_PAYLOAD\020\0032x\n\024CalendarProtoService\022`\n" +
-      "\013SendRequest\022\'.via.sep3.viacalendar.gRPC" +
-      ".RequestProto\032(.via.sep3.viacalendar.gRP" +
-      "C.ResponseProtob\006proto3"
+      "tProto\"G\n\016GroupProtoList\0225\n\006groups\030\001 \003(\013" +
+      "2%.via.sep3.viacalendar.gRPC.GroupProto*" +
+      "u\n\020HandlerTypeProto\022\023\n\017HANDLER_UNKNOWN\020\000" +
+      "\022\021\n\rHANDLER_EVENT\020\001\022\020\n\014HANDLER_USER\020\002\022\021\n" +
+      "\rHANDLER_GROUP\020\003\022\024\n\020HANDLER_CALENDAR\020\004*\177" +
+      "\n\017ActionTypeProto\022\022\n\016ACTION_UNKNOWN\020\000\022\021\n" +
+      "\rACTION_CREATE\020\001\022\016\n\nACTION_GET\020\002\022\021\n\rACTI" +
+      "ON_UPDATE\020\003\022\021\n\rACTION_DELETE\020\004\022\017\n\013ACTION" +
+      "_LIST\020\005*b\n\017StatusTypeProto\022\022\n\016STATUS_UNK" +
+      "NOWN\020\000\022\r\n\tSTATUS_OK\020\001\022\020\n\014STATUS_ERROR\020\002\022" +
+      "\032\n\026STATUS_INVALID_PAYLOAD\020\003*>\n\024TypeOfRec" +
+      "ursiveProto\022\010\n\004NONE\020\000\022\007\n\003DAY\020\001\022\t\n\005MONTH\020" +
+      "\002\022\010\n\004YEAR\020\0032x\n\024CalendarProtoService\022`\n\013S" +
+      "endRequest\022\'.via.sep3.viacalendar.gRPC.R" +
+      "equestProto\032(.via.sep3.viacalendar.gRPC." +
+      "ResponseProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10291,15 +9154,7 @@ public final class Calendar {
         internal_static_via_sep3_viacalendar_gRPC_EventProto_descriptor,
         new java.lang.String[] { "Id", "Name", "Tag", "Recursive", "CreatorId", "Duration", "TypeOfRecursive", });
     internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor =
-        new java.lang.String[] { "Id", "Name", "Tag", "Recursive", });
-    internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_via_sep3_viacalendar_gRPC_GroupProto_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_via_sep3_viacalendar_gRPC_GroupProto_descriptor,
-        new java.lang.String[] { "Id", "Name", });
-    internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor =
-      getDescriptor().getMessageTypes().get(4);
     internal_static_via_sep3_viacalendar_gRPC_UserProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_UserProto_descriptor,
@@ -10318,22 +9173,18 @@ public final class Calendar {
         new java.lang.String[] { "Id", "UserId", "EventListId", });
     internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor =
       getDescriptor().getMessageTypes().get(6);
-        new java.lang.String[] { "Id", "Username", "Email", "Password", "FirstName", "LastName", });
-    internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor =
-      getDescriptor().getMessageTypes().get(5);
     internal_static_via_sep3_viacalendar_gRPC_UserProtoList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_UserProtoList_descriptor,
         new java.lang.String[] { "Users", });
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_descriptor =
       getDescriptor().getMessageTypes().get(7);
-      getDescriptor().getMessageTypes().get(6);
     internal_static_via_sep3_viacalendar_gRPC_EventProtoList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_EventProtoList_descriptor,
         new java.lang.String[] { "Events", });
     internal_static_via_sep3_viacalendar_gRPC_GroupProtoList_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_via_sep3_viacalendar_gRPC_GroupProtoList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_via_sep3_viacalendar_gRPC_GroupProtoList_descriptor,

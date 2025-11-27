@@ -47,11 +47,6 @@ message EventProto {
   TypeOfRecursiveProto typeOfRecursive = 7;
 }
 
-message GroupProto {
-  int32 id = 1;
-  string name = 2;
-}
-
 message UserProto {
   int32 id = 1;
   string username = 2;
