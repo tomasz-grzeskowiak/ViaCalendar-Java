@@ -8,6 +8,9 @@ import via.sep3.viacalendar.gRPC.Calendar.CalendarProto;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * The type Calendar.
+ */
 @Entity
 @Table(name = "calendars", schema = "via_calendar")
 public class Calendar {
@@ -23,31 +26,71 @@ public class Calendar {
 
     @ManyToMany(mappedBy = "calendars")
     private Set<Event> events = new LinkedHashSet<>();
-    public Calendar(){}; //default constructor
-    public Calendar(CalendarProto proto){
+
+  /**
+   * Instantiates a new Calendar.
+   */
+  public Calendar(){}; //default constructor
+
+  /**
+   * Instantiates a new Calendar.
+   *
+   * @param proto the proto
+   */
+  public Calendar(CalendarProto proto){
     }
 
-    public Set<Event> getEvents() {
+  /**
+   * Gets events.
+   *
+   * @return the events
+   */
+  public Set<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(Set<Event> events) {
+  /**
+   * Sets events.
+   *
+   * @param events the events
+   */
+  public void setEvents(Set<Event> events) {
         this.events = events;
     }
 
-    public Integer getId() {
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
+  public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
+  public void setId(Integer id) {
         this.id = id;
     }
 
-    public User getUser() {
+  /**
+   * Gets user.
+   *
+   * @return the user
+   */
+  public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+  /**
+   * Sets user.
+   *
+   * @param user the user
+   */
+  public void setUser(User user) {
         this.user = user;
     }
 

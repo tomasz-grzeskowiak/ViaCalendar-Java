@@ -7,6 +7,9 @@ import org.hibernate.Hibernate;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * The type Calendar event id.
+ */
 @Embeddable
 public class CalendarEventId implements Serializable {
     private static final long serialVersionUID = 8076233605126528611L;
@@ -16,19 +19,39 @@ public class CalendarEventId implements Serializable {
     @Column(name = "event_id", nullable = false)
     private Integer eventId;
 
-    public Integer getCalendarId() {
+  /**
+   * Gets calendar id.
+   *
+   * @return the calendar id
+   */
+  public Integer getCalendarId() {
         return calendarId;
     }
 
-    public void setCalendarId(Integer calendarId) {
+  /**
+   * Sets calendar id.
+   *
+   * @param calendarId the calendar id
+   */
+  public void setCalendarId(Integer calendarId) {
         this.calendarId = calendarId;
     }
 
-    public Integer getEventId() {
+  /**
+   * Gets event id.
+   *
+   * @return the event id
+   */
+  public Integer getEventId() {
         return eventId;
     }
 
-    public void setEventId(Integer eventId) {
+  /**
+   * Sets event id.
+   *
+   * @param eventId the event id
+   */
+  public void setEventId(Integer eventId) {
         this.eventId = eventId;
     }
 

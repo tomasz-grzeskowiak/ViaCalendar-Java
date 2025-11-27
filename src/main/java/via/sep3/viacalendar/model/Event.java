@@ -10,17 +10,32 @@ import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * The type Event.
+ */
 @Entity
 @Table (name = "events", schema = "via_calendar")
 public class Event {
-    @Id
+  /**
+   * The Event id.
+   */
+  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer eventId;
-    @Column (name ="name", nullable = false, length = 100)
+  /**
+   * The Name.
+   */
+  @Column (name ="name", nullable = false, length = 100)
     String name;
-    @Column (name = "tag", nullable = false, length = 100)
+  /**
+   * The Tag.
+   */
+  @Column (name = "tag", nullable = false, length = 100)
     String tag;
-    @Column (name = "recursive")
+  /**
+   * The Recursive.
+   */
+  @Column (name = "recursive")
     Boolean recursive;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,8 +54,18 @@ public class Event {
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "calendar_id"))
     private Set<Calendar> calendars = new LinkedHashSet<>();
-    public Event(){}//default constructor
-    public Event(EventProto proto){
+
+  /**
+   * Instantiates a new Event.
+   */
+  public Event(){}//default constructor
+
+  /**
+   * Instantiates a new Event.
+   *
+   * @param proto the proto
+   */
+  public Event(EventProto proto){
 
         this.name = proto.getName();
         this.tag = proto.getTag();
@@ -52,64 +77,147 @@ public class Event {
         this.typeOfRecursive = ProtoUtilities.parseTypeOfRecursiveToString(proto.getTypeOfRecursive());
     }
 
-    public Set<Calendar> getCalendars() {
+  /**
+   * Gets calendars.
+   *
+   * @return the calendars
+   */
+  public Set<Calendar> getCalendars() {
         return calendars;
     }
 
-    public void setCalendars(Set<Calendar> calendars) {
+  /**
+   * Sets calendars.
+   *
+   * @param calendars the calendars
+   */
+  public void setCalendars(Set<Calendar> calendars) {
         this.calendars = calendars;
     }
 
-    public String getTypeOfRecursive() {
+  /**
+   * Gets type of recursive.
+   *
+   * @return the type of recursive
+   */
+  public String getTypeOfRecursive() {
         return typeOfRecursive;
     }
 
-    public void setTypeOfRecursive(String typeOfRecursive) {
+  /**
+   * Sets type of recursive.
+   *
+   * @param typeOfRecursive the type of recursive
+   */
+  public void setTypeOfRecursive(String typeOfRecursive) {
         this.typeOfRecursive = typeOfRecursive;
     }
 
-    public Instant getDuration() {
+  /**
+   * Gets duration.
+   *
+   * @return the duration
+   */
+  public Instant getDuration() {
         return duration;
     }
 
-    public void setDuration(Instant duration) {
+  /**
+   * Sets duration.
+   *
+   * @param duration the duration
+   */
+  public void setDuration(Instant duration) {
         this.duration = duration;
     }
 
-    public User getCreator() {
+  /**
+   * Gets creator.
+   *
+   * @return the creator
+   */
+  public User getCreator() {
         return creator;
     }
 
-    public void setCreator(User creator) {
+  /**
+   * Sets creator.
+   *
+   * @param creator the creator
+   */
+  public void setCreator(User creator) {
         this.creator = creator;
     }
 
-    public String getName() {
+  /**
+   * Gets name.
+   *
+   * @return the name
+   */
+  public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+  /**
+   * Sets name.
+   *
+   * @param name the name
+   */
+  public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getEventId() {
+  /**
+   * Gets event id.
+   *
+   * @return the event id
+   */
+  public Integer getEventId() {
         return eventId;
     }
 
-    public void setEventId(Integer eventId) {
+  /**
+   * Sets event id.
+   *
+   * @param eventId the event id
+   */
+  public void setEventId(Integer eventId) {
         this.eventId = eventId;
     }
 
-    public String getTag() {
+  /**
+   * Gets tag.
+   *
+   * @return the tag
+   */
+  public String getTag() {
         return tag;
     }
-    public void setTag(String tag) {
+
+  /**
+   * Sets tag.
+   *
+   * @param tag the tag
+   */
+  public void setTag(String tag) {
         this.tag = tag;
     }
-    public Boolean getRecursive() {
+
+  /**
+   * Gets recursive.
+   *
+   * @return the recursive
+   */
+  public Boolean getRecursive() {
         return recursive;
     }
-    public void setRecursive(Boolean recursive) {
+
+  /**
+   * Sets recursive.
+   *
+   * @param recursive the recursive
+   */
+  public void setRecursive(Boolean recursive) {
         this.recursive = recursive;
     }
 

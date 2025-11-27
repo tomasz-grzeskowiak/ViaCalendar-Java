@@ -10,6 +10,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type User.
+ */
 @Entity
 @Table(name = "users", schema = "via_calendar")
 public class User {
@@ -43,14 +46,19 @@ public class User {
 
     @OneToMany(mappedBy = "creator")
     private Set<Event> events = new LinkedHashSet<>();
-    public User(){} //default constructor
 
-    /**
-     * Constructor for User.
-     * @implNote Set calendars, events and group after retrieved from database manually.
-     * @param proto
-     */
-    public User(UserProto proto){
+  /**
+   * Instantiates a new User.
+   */
+  public User(){} //default constructor
+
+  /**
+   * Constructor for User.
+   *
+   * @param proto the proto
+   * @implNote Set calendars, events and group after retrieved from database manually.
+   */
+  public User(UserProto proto){
         this.id = proto.getId();
         this.username = proto.getUsername();
         this.email = proto.getEmail();
@@ -61,76 +69,167 @@ public class User {
         //set events after event is retrieved from database
         //set group after group is retrieved from database
     }
-    public Integer getId() {
+
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
+  public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
+  public void setId(Integer id) {
         this.id = id;
     }
 
-    public Group getGroup() {
+  /**
+   * Gets group.
+   *
+   * @return the group
+   */
+  public Group getGroup() {
         return group;
     }
 
-    public void setGroup(Group group) {
+  /**
+   * Sets group.
+   *
+   * @param group the group
+   */
+  public void setGroup(Group group) {
         this.group = group;
     }
 
-    public String getUsername() {
+  /**
+   * Gets username.
+   *
+   * @return the username
+   */
+  public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+  /**
+   * Sets username.
+   *
+   * @param username the username
+   */
+  public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getEmail() {
+  /**
+   * Gets email.
+   *
+   * @return the email
+   */
+  public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+  /**
+   * Sets email.
+   *
+   * @param email the email
+   */
+  public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
+  /**
+   * Gets password.
+   *
+   * @return the password
+   */
+  public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+  /**
+   * Sets password.
+   *
+   * @param password the password
+   */
+  public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getFirstName() {
+  /**
+   * Gets first name.
+   *
+   * @return the first name
+   */
+  public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+  /**
+   * Sets first name.
+   *
+   * @param firstName the first name
+   */
+  public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+  /**
+   * Gets last name.
+   *
+   * @return the last name
+   */
+  public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+  /**
+   * Sets last name.
+   *
+   * @param lastName the last name
+   */
+  public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public Set<Calendar> getCalendars() {
+  /**
+   * Gets calendars.
+   *
+   * @return the calendars
+   */
+  public Set<Calendar> getCalendars() {
         return calendars;
     }
 
-    public void setCalendars(List<Calendar> calendars) {
+  /**
+   * Sets calendars.
+   *
+   * @param calendars the calendars
+   */
+  public void setCalendars(List<Calendar> calendars) {
         this.calendars = new LinkedHashSet<>(calendars);
 
     }
 
-    public Set<Event> getEvents() {
+  /**
+   * Gets events.
+   *
+   * @return the events
+   */
+  public Set<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(List<Event> events) {
+  /**
+   * Sets events.
+   *
+   * @param events the events
+   */
+  public void setEvents(List<Event> events) {
         this.events = new LinkedHashSet<>(events);
     }
 

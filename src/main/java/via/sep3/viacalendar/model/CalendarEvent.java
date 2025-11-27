@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+/**
+ * The type Calendar event.
+ */
 @Entity
 @Table(name = "calendar_events", schema = "via_calendar")
 public class CalendarEvent {
@@ -22,27 +25,57 @@ public class CalendarEvent {
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 
-    public CalendarEventId getId() {
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
+  public CalendarEventId getId() {
         return id;
     }
 
-    public void setId(CalendarEventId id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
+  public void setId(CalendarEventId id) {
         this.id = id;
     }
 
-    public Calendar getCalendar() {
+  /**
+   * Gets calendar.
+   *
+   * @return the calendar
+   */
+  public Calendar getCalendar() {
         return calendar;
     }
 
-    public void setCalendar(Calendar calendar) {
+  /**
+   * Sets calendar.
+   *
+   * @param calendar the calendar
+   */
+  public void setCalendar(Calendar calendar) {
         this.calendar = calendar;
     }
 
-    public Event getEvent() {
+  /**
+   * Gets event.
+   *
+   * @return the event
+   */
+  public Event getEvent() {
         return event;
     }
 
-    public void setEvent(Event event) {
+  /**
+   * Sets event.
+   *
+   * @param event the event
+   */
+  public void setEvent(Event event) {
         this.event = event;
     }
 

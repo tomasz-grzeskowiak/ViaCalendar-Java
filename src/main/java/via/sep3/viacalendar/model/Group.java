@@ -5,6 +5,9 @@ import via.sep3.viacalendar.gRPC.Calendar.GroupProto;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * The type Group.
+ */
 @Entity
 @Table(name = "groups", schema = "via_calendar")
 public class Group {
@@ -19,39 +22,73 @@ public class Group {
     @OneToMany(mappedBy = "group")
     private Set<User> users = new LinkedHashSet<>();
 
-    public Group(){};//default
+  /**
+   * Instantiates a new Group.
+   */
+  public Group(){};//default
 
-    /**
-     * Constructor for Group.
-     * @implNote Set users gotten from the database manually.
-     * @param proto
-     */
-    public Group(GroupProto proto){
+  /**
+   * Constructor for Group.
+   *
+   * @param proto the proto
+   * @implNote Set users gotten from the database manually.
+   */
+  public Group(GroupProto proto){
         id = proto.getId();
         name = proto.getName();
     };
 
-    public Set<User> getUsers() {
+  /**
+   * Gets users.
+   *
+   * @return the users
+   */
+  public Set<User> getUsers() {
         return users;
     }
 
-    public void setUsers(Set<User> users) {
+  /**
+   * Sets users.
+   *
+   * @param users the users
+   */
+  public void setUsers(Set<User> users) {
         this.users = users;
     }
 
-    public Integer getId() {
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
+  public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
+  public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
+  /**
+   * Gets name.
+   *
+   * @return the name
+   */
+  public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+  /**
+   * Sets name.
+   *
+   * @param name the name
+   */
+  public void setName(String name) {
         this.name = name;
     }
 
