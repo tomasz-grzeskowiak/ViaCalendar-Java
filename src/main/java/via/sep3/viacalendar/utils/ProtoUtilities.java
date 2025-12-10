@@ -77,7 +77,7 @@ public class ProtoUtilities {
         EventProto.Builder builder = EventProto.newBuilder();
         if(event.getEventId() == null)
         {
-            throw new RuntimeException("Event is is null");
+            throw new RuntimeException("Event is null");
         }
         builder.setId(event.getEventId())
                 .setName(event.getName() == null ? "" : event.getName() )

@@ -19,6 +19,9 @@ public class Group {
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
+    @Column(name = "creator_id", nullable = false)
+    private Integer creator_id;
+
     @OneToMany(mappedBy = "group")
     private Set<User> users = new LinkedHashSet<>();
 
@@ -92,4 +95,10 @@ public class Group {
         this.name = name;
     }
 
+  public  Integer getCreator_id() {
+        return creator_id;
+  }
+  public void setCreator_id(Integer creator_id) {
+      this.creator_id = creator_id;
+  }
 }
