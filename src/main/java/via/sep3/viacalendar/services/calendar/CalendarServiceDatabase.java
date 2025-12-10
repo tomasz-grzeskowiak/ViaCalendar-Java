@@ -90,29 +90,59 @@ public class CalendarServiceDatabase implements CalendarService {
     @Transactional
     @Override
     public void update(CalendarProto payload) {
-        log.info("Updating calendar with id: {}", payload.getId());
+        System.out.println("=== DEBUG UPDATE CALENDAR ===");
+        System.out.println("Updating calendar ID: " + payload.getId());
+        System.out.println("New user ID: " + payload.getUserId());
+        System.out.println("New event IDs: " + payload.getEventListIdList());
 
-        User user = userRepository.findById(payload.getUserId())
-                .orElseThrow();
+        // 1. Get existing calendar from database
+        Calendar calendar = calendarRepository.findById(payload.getId())
+                .orElseThrow(() -> new RuntimeException("Calendar not found: " + payload.getId()));
 
-        Calendar calendar = new Calendar(payload);
-        calendar.setId(payload.getId());
-        calendar.setUser(user);
+        // 2. Update user if changed
+        if (!calendar.getUser().getId().equals(payload.getUserId())) {
+            User user = userRepository.findById(payload.getUserId())
+                    .orElseThrow(() -> new RuntimeException("User not found: " + payload.getUserId()));
+            calendar.setUser(user);
+        }
 
-        // Handle events
+        // 3. Handle events - IMPORTANT: Clear existing events first
+        System.out.println("Clearing existing events from calendar");
+
+        // Remove this calendar from all current events
+        if (calendar.getEvents() != null) {
+            for (Event event : calendar.getEvents()) {
+                event.getCalendars().remove(calendar);
+            }
+            calendar.getEvents().clear();
+        }
+
+        // 4. Add new events
         if (payload.getEventListIdCount() > 0) {
             List<Integer> eventIds = payload.getEventListIdList().stream()
                     .mapToInt(Integer::intValue)
                     .boxed()
                     .toList();
 
+            System.out.println("Looking for events with IDs: " + eventIds);
+
             List<Event> eventList = eventRepository.findAllById(eventIds);
+            System.out.println("Found " + eventList.size() + " events");
+
             Set<Event> events = new HashSet<>(eventList);
+            System.out.println("Setting " + events.size() + " events on calendar");
             calendar.setEvents(events);
+
+            // Add this calendar to each event
+            for (Event event : events) {
+                event.getCalendars().add(calendar);
+                System.out.println("Added calendar to event: " + event.getEventId());
+            }
         }
 
-        log.info("Calendar updated: {}", calendar);
+        System.out.println("Saving calendar...");
         calendarRepository.save(calendar);
+        System.out.println("=== CALENDAR UPDATED ===");
     }
 
     @Transactional
