@@ -9,13 +9,43 @@ import via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto;
 import via.sep3.viacalendar.gRPC.Calendar.UserProto;
 import via.sep3.viacalendar.services.user.UserService;
 
+/**
+ * User Handler Service
+ * <p>
+ * Handles user-related actions such as creating, retrieving, updating, and deleting users.
+ *
+ * @author SEP3 Group 8
+ * @version 1.0.0
+ * @email "mailto:354782@via.dk"
+ * @date 2025.12.15
+ * @since 1.0
+ */
 @Service
 public class UserHandler implements ViaCalendarHandler{
-    private final UserService userService;
-    public UserHandler(UserService userService) {
+  /** User service instance */
+  private final UserService userService;
+
+  /**
+   * Initializes a new instance of the UserHandler class with the specified UserService.
+   *
+   * @param userService The service responsible for handling user operations.
+   */
+  public UserHandler(UserService userService) {
         this.userService = userService;
     }
-    @Override
+
+  /**
+   * Handles an action based on the provided action type and payload.
+   * <p>
+   * Unpacks the payload into a UserProto object, processes it according to the action type,
+   * and returns the result as a packed Any message. If no proto is created, returns a default UserProto.
+   *
+   * @param actionType The type of action to handle.
+   * @param payload    The payload containing the data for the action.
+   * @return A packed Any message representing the result of the action.
+   * @throws RuntimeException if an error occurs during unpacking or processing.
+   */
+  @Override
     public Message handle(ActionTypeProto actionType, Object payload) {
         Message proto = null;
         Any payloadAny = (Any) payload;
@@ -41,7 +71,13 @@ public class UserHandler implements ViaCalendarHandler{
 
         return Any.pack(proto);
     }
-    public HandlerTypeProto getType() {
+
+  /**
+   * Retrieves the handler type as a proto enum value.
+   *
+   * @return The handler type proto enum value.
+   */
+  public HandlerTypeProto getType() {
         return HandlerTypeProto.HANDLER_USER;
     }
 }

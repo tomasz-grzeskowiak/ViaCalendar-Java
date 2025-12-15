@@ -10,8 +10,28 @@ import via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto;
 import java.util.LinkedHashSet;
 import java.util.stream.Collectors;
 
+/**
+ * Utility Class for Parsing Objects to Protobuf
+ * <p>
+ * Provides methods to convert domain objects (User, Group, Calendar, Event) into their corresponding Protobuf representations.
+ *
+ * @author SEP3 Group 8
+ * @version 1.0.0
+ * @email "mailto:354782@via.dk"
+ * @date 2025.12.15
+ * @since 1.0
+ */
 public class ProtoUtilities {
-    public static UserProto parseUserToProto(User user)
+  /**
+   * Parses a User object into a UserProto.
+   * <p>
+   * Converts the given User object into a UserProto, handling null values appropriately.
+   *
+   * @param user The User object to be parsed.
+   * @return A UserProto representing the User object.
+   * @throws RuntimeException If the input User is null.
+   */
+  public static UserProto parseUserToProto(User user)
     {
         if(user == null)
         {
@@ -40,7 +60,17 @@ public class ProtoUtilities {
                                 .toList())
                 .build();
     }
-    public static GroupProto parseGroupToProto(Group group)
+
+  /**
+   * Parses a Group object into a GroupProto.
+   * <p>
+   * Converts the provided Group object into its corresponding protobuf representation. If the input Group is null, it throws a RuntimeException.
+   *
+   * @param group The Group object to be parsed.
+   * @return A GroupProto representing the input Group.
+   * @throws RuntimeException if the input Group is null.
+   */
+  public static GroupProto parseGroupToProto(Group group)
     {
         if(group == null)
         {
@@ -56,7 +86,17 @@ public class ProtoUtilities {
                                 .collect(Collectors.toList()))
                 .build();
     }
-    public static CalendarProto parseCalendarToProto(Calendar calendar)
+
+  /**
+   * Parses a Calendar object into a CalendarProto.
+   * <p>
+   * Converts the given Calendar object into its corresponding CalendarProto representation.
+   *
+   * @param calendar The Calendar object to be parsed.
+   * @return A CalendarProto representing the input Calendar.
+   * @throws RuntimeException If the input Calendar is null.
+   */
+  public static CalendarProto parseCalendarToProto(Calendar calendar)
     {
         if(calendar == null)
         {
@@ -73,7 +113,18 @@ public class ProtoUtilities {
                 .setUserId(calendar.getUser().getId())
                 .build();
     }
-    public static EventProto parseEventToProto(Event event) {
+
+  /**
+   * Parses an Event object into an EventProto.
+   * <p>
+   * Converts the given Event object into its corresponding EventProto representation,
+   * handling null values appropriately and throwing a RuntimeException if the input Event is null.
+   *
+   * @param event The Event object to be parsed.
+   * @return The EventProto representation of the input Event.
+   * @throws RuntimeException Thrown when the input Event is null.
+   */
+  public static EventProto parseEventToProto(Event event) {
         EventProto.Builder builder = EventProto.newBuilder();
         if(event.getEventId() == null)
         {
@@ -93,7 +144,17 @@ public class ProtoUtilities {
                         0 : event.getCreator().getId());
             return builder.build();
     }
-    public static TypeOfRecursiveProto parseStringToTypeOfRecursive(String message)
+
+  /**
+   * Parses a string to the corresponding TypeOfRecursiveProto enum value.
+   * <p>
+   * Converts a given string message into its corresponding enum value from TypeOfRecursiveProto.
+   * If the input string does not match any known values, returns TypeOfRecursiveProto.NONE.
+   *
+   * @param message The string message to parse.
+   * @return The corresponding TypeOfRecursiveProto enum value.
+   */
+  public static TypeOfRecursiveProto parseStringToTypeOfRecursive(String message)
     {
         if(message == null)
         {
@@ -114,7 +175,16 @@ public class ProtoUtilities {
             }
         }
     }
-    public static String parseTypeOfRecursiveToString(TypeOfRecursiveProto proto)
+
+  /**
+   * Parses the type of recursive proto to a string representation.
+   * <p>
+   * Converts the given TypeOfRecursiveProto enum value to its corresponding string representation.
+   *
+   * @param proto The TypeOfRecursiveProto enum value to parse.
+   * @return The string representation of the proto, or null if the input is null.
+   */
+  public static String parseTypeOfRecursiveToString(TypeOfRecursiveProto proto)
     {
         String result = null;
         switch (proto) {

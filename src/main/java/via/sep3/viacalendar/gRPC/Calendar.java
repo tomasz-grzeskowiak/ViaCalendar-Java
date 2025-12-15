@@ -14,53 +14,20 @@ public final class Calendar {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code via.sep3.viacalendar.gRPC.HandlerTypeProto}
-   */
   public enum HandlerTypeProto
       implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>HANDLER_UNKNOWN = 0;</code>
-     */
     HANDLER_UNKNOWN(0),
-    /**
-     * <code>HANDLER_EVENT = 1;</code>
-     */
     HANDLER_EVENT(1),
-    /**
-     * <code>HANDLER_USER = 2;</code>
-     */
     HANDLER_USER(2),
-    /**
-     * <code>HANDLER_GROUP = 3;</code>
-     */
     HANDLER_GROUP(3),
-    /**
-     * <code>HANDLER_CALENDAR = 4;</code>
-     */
     HANDLER_CALENDAR(4),
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>HANDLER_UNKNOWN = 0;</code>
-     */
     public static final int HANDLER_UNKNOWN_VALUE = 0;
-    /**
-     * <code>HANDLER_EVENT = 1;</code>
-     */
     public static final int HANDLER_EVENT_VALUE = 1;
-    /**
-     * <code>HANDLER_USER = 2;</code>
-     */
     public static final int HANDLER_USER_VALUE = 2;
-    /**
-     * <code>HANDLER_GROUP = 3;</code>
-     */
     public static final int HANDLER_GROUP_VALUE = 3;
-    /**
-     * <code>HANDLER_CALENDAR = 4;</code>
-     */
     public static final int HANDLER_CALENDAR_VALUE = 4;
 
 
@@ -72,20 +39,11 @@ public final class Calendar {
       return value;
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
     @java.lang.Deprecated
     public static HandlerTypeProto valueOf(int value) {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static HandlerTypeProto forNumber(int value) {
       switch (value) {
         case 0: return HANDLER_UNKNOWN;
@@ -149,61 +107,22 @@ public final class Calendar {
     // @@protoc_insertion_point(enum_scope:via.sep3.viacalendar.gRPC.HandlerTypeProto)
   }
 
-  /**
-   * Protobuf enum {@code via.sep3.viacalendar.gRPC.ActionTypeProto}
-   */
   public enum ActionTypeProto
       implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>ACTION_UNKNOWN = 0;</code>
-     */
     ACTION_UNKNOWN(0),
-    /**
-     * <code>ACTION_CREATE = 1;</code>
-     */
     ACTION_CREATE(1),
-    /**
-     * <code>ACTION_GET = 2;</code>
-     */
     ACTION_GET(2),
-    /**
-     * <code>ACTION_UPDATE = 3;</code>
-     */
     ACTION_UPDATE(3),
-    /**
-     * <code>ACTION_DELETE = 4;</code>
-     */
     ACTION_DELETE(4),
-    /**
-     * <code>ACTION_LIST = 5;</code>
-     */
     ACTION_LIST(5),
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>ACTION_UNKNOWN = 0;</code>
-     */
     public static final int ACTION_UNKNOWN_VALUE = 0;
-    /**
-     * <code>ACTION_CREATE = 1;</code>
-     */
     public static final int ACTION_CREATE_VALUE = 1;
-    /**
-     * <code>ACTION_GET = 2;</code>
-     */
     public static final int ACTION_GET_VALUE = 2;
-    /**
-     * <code>ACTION_UPDATE = 3;</code>
-     */
     public static final int ACTION_UPDATE_VALUE = 3;
-    /**
-     * <code>ACTION_DELETE = 4;</code>
-     */
     public static final int ACTION_DELETE_VALUE = 4;
-    /**
-     * <code>ACTION_LIST = 5;</code>
-     */
     public static final int ACTION_LIST_VALUE = 5;
 
 
@@ -215,20 +134,11 @@ public final class Calendar {
       return value;
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
     @java.lang.Deprecated
     public static ActionTypeProto valueOf(int value) {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static ActionTypeProto forNumber(int value) {
       switch (value) {
         case 0: return ACTION_UNKNOWN;
@@ -293,45 +203,18 @@ public final class Calendar {
     // @@protoc_insertion_point(enum_scope:via.sep3.viacalendar.gRPC.ActionTypeProto)
   }
 
-  /**
-   * Protobuf enum {@code via.sep3.viacalendar.gRPC.StatusTypeProto}
-   */
   public enum StatusTypeProto
       implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>STATUS_UNKNOWN = 0;</code>
-     */
     STATUS_UNKNOWN(0),
-    /**
-     * <code>STATUS_OK = 1;</code>
-     */
     STATUS_OK(1),
-    /**
-     * <code>STATUS_ERROR = 2;</code>
-     */
     STATUS_ERROR(2),
-    /**
-     * <code>STATUS_INVALID_PAYLOAD = 3;</code>
-     */
     STATUS_INVALID_PAYLOAD(3),
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>STATUS_UNKNOWN = 0;</code>
-     */
     public static final int STATUS_UNKNOWN_VALUE = 0;
-    /**
-     * <code>STATUS_OK = 1;</code>
-     */
     public static final int STATUS_OK_VALUE = 1;
-    /**
-     * <code>STATUS_ERROR = 2;</code>
-     */
     public static final int STATUS_ERROR_VALUE = 2;
-    /**
-     * <code>STATUS_INVALID_PAYLOAD = 3;</code>
-     */
     public static final int STATUS_INVALID_PAYLOAD_VALUE = 3;
 
 
@@ -343,20 +226,11 @@ public final class Calendar {
       return value;
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
     @java.lang.Deprecated
     public static StatusTypeProto valueOf(int value) {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static StatusTypeProto forNumber(int value) {
       switch (value) {
         case 0: return STATUS_UNKNOWN;
@@ -419,45 +293,18 @@ public final class Calendar {
     // @@protoc_insertion_point(enum_scope:via.sep3.viacalendar.gRPC.StatusTypeProto)
   }
 
-  /**
-   * Protobuf enum {@code via.sep3.viacalendar.gRPC.TypeOfRecursiveProto}
-   */
   public enum TypeOfRecursiveProto
       implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>NONE = 0;</code>
-     */
     NONE(0),
-    /**
-     * <code>DAY = 1;</code>
-     */
     DAY(1),
-    /**
-     * <code>MONTH = 2;</code>
-     */
     MONTH(2),
-    /**
-     * <code>YEAR = 3;</code>
-     */
     YEAR(3),
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>NONE = 0;</code>
-     */
     public static final int NONE_VALUE = 0;
-    /**
-     * <code>DAY = 1;</code>
-     */
     public static final int DAY_VALUE = 1;
-    /**
-     * <code>MONTH = 2;</code>
-     */
     public static final int MONTH_VALUE = 2;
-    /**
-     * <code>YEAR = 3;</code>
-     */
     public static final int YEAR_VALUE = 3;
 
 
@@ -469,20 +316,11 @@ public final class Calendar {
       return value;
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
     @java.lang.Deprecated
     public static TypeOfRecursiveProto valueOf(int value) {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static TypeOfRecursiveProto forNumber(int value) {
       switch (value) {
         case 0: return NONE;
@@ -549,46 +387,16 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.RequestProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-     * @return The enum numeric value on the wire for handler.
-     */
     int getHandlerValue();
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-     * @return The handler.
-     */
     via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto getHandler();
 
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-     * @return The enum numeric value on the wire for action.
-     */
     int getActionValue();
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-     * @return The action.
-     */
     via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto getAction();
 
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
     boolean hasPayload();
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     * @return The payload.
-     */
     com.google.protobuf.Any getPayload();
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     */
     com.google.protobuf.AnyOrBuilder getPayloadOrBuilder();
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.RequestProto}
-   */
   public static final class RequestProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.RequestProto)
@@ -694,17 +502,9 @@ public final class Calendar {
 
     public static final int HANDLER_FIELD_NUMBER = 1;
     private int handler_;
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-     * @return The enum numeric value on the wire for handler.
-     */
     @java.lang.Override public int getHandlerValue() {
       return handler_;
     }
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-     * @return The handler.
-     */
     @java.lang.Override public via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto getHandler() {
       @SuppressWarnings("deprecation")
       via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto result = via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto.valueOf(handler_);
@@ -713,17 +513,9 @@ public final class Calendar {
 
     public static final int ACTION_FIELD_NUMBER = 2;
     private int action_;
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-     * @return The enum numeric value on the wire for action.
-     */
     @java.lang.Override public int getActionValue() {
       return action_;
     }
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-     * @return The action.
-     */
     @java.lang.Override public via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto getAction() {
       @SuppressWarnings("deprecation")
       via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto result = via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto.valueOf(action_);
@@ -732,25 +524,14 @@ public final class Calendar {
 
     public static final int PAYLOAD_FIELD_NUMBER = 3;
     private com.google.protobuf.Any payload_;
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
     @java.lang.Override
     public boolean hasPayload() {
       return payload_ != null;
     }
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     * @return The payload.
-     */
     @java.lang.Override
     public com.google.protobuf.Any getPayload() {
       return payload_ == null ? com.google.protobuf.Any.getDefaultInstance() : payload_;
     }
-    /**
-     * <code>.google.protobuf.Any payload = 3;</code>
-     */
     @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getPayloadOrBuilder() {
       return getPayload();
@@ -936,9 +717,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.RequestProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.RequestProto)
@@ -1104,39 +882,21 @@ public final class Calendar {
       }
 
       private int handler_ = 0;
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-       * @return The enum numeric value on the wire for handler.
-       */
       @java.lang.Override public int getHandlerValue() {
         return handler_;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-       * @param value The enum numeric value on the wire for handler to set.
-       * @return This builder for chaining.
-       */
       public Builder setHandlerValue(int value) {
         
         handler_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-       * @return The handler.
-       */
       @java.lang.Override
       public via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto getHandler() {
         @SuppressWarnings("deprecation")
         via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto result = via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto.valueOf(handler_);
         return result == null ? via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto.UNRECOGNIZED : result;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-       * @param value The handler to set.
-       * @return This builder for chaining.
-       */
       public Builder setHandler(via.sep3.viacalendar.gRPC.Calendar.HandlerTypeProto value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1146,10 +906,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.HandlerTypeProto handler = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearHandler() {
         
         handler_ = 0;
@@ -1158,39 +914,21 @@ public final class Calendar {
       }
 
       private int action_ = 0;
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-       * @return The enum numeric value on the wire for action.
-       */
       @java.lang.Override public int getActionValue() {
         return action_;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-       * @param value The enum numeric value on the wire for action to set.
-       * @return This builder for chaining.
-       */
       public Builder setActionValue(int value) {
         
         action_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-       * @return The action.
-       */
       @java.lang.Override
       public via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto getAction() {
         @SuppressWarnings("deprecation")
         via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto result = via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto.valueOf(action_);
         return result == null ? via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto.UNRECOGNIZED : result;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-       * @param value The action to set.
-       * @return This builder for chaining.
-       */
       public Builder setAction(via.sep3.viacalendar.gRPC.Calendar.ActionTypeProto value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1200,10 +938,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.ActionTypeProto action = 2;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearAction() {
         
         action_ = 0;
@@ -1214,17 +948,9 @@ public final class Calendar {
       private com.google.protobuf.Any payload_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> payloadBuilder_;
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       * @return Whether the payload field is set.
-       */
       public boolean hasPayload() {
         return payloadBuilder_ != null || payload_ != null;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       * @return The payload.
-       */
       public com.google.protobuf.Any getPayload() {
         if (payloadBuilder_ == null) {
           return payload_ == null ? com.google.protobuf.Any.getDefaultInstance() : payload_;
@@ -1232,9 +958,6 @@ public final class Calendar {
           return payloadBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public Builder setPayload(com.google.protobuf.Any value) {
         if (payloadBuilder_ == null) {
           if (value == null) {
@@ -1248,9 +971,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public Builder setPayload(
           com.google.protobuf.Any.Builder builderForValue) {
         if (payloadBuilder_ == null) {
@@ -1262,9 +982,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public Builder mergePayload(com.google.protobuf.Any value) {
         if (payloadBuilder_ == null) {
           if (payload_ != null) {
@@ -1280,9 +997,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public Builder clearPayload() {
         if (payloadBuilder_ == null) {
           payload_ = null;
@@ -1294,17 +1008,11 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public com.google.protobuf.Any.Builder getPayloadBuilder() {
         
         onChanged();
         return getPayloadFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       public com.google.protobuf.AnyOrBuilder getPayloadOrBuilder() {
         if (payloadBuilder_ != null) {
           return payloadBuilder_.getMessageOrBuilder();
@@ -1313,9 +1021,6 @@ public final class Calendar {
               com.google.protobuf.Any.getDefaultInstance() : payload_;
         }
       }
-      /**
-       * <code>.google.protobuf.Any payload = 3;</code>
-       */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getPayloadFieldBuilder() {
@@ -1386,35 +1091,13 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.ResponseProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-     * @return The enum numeric value on the wire for status.
-     */
     int getStatusValue();
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-     * @return The status.
-     */
     via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto getStatus();
 
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     * @return Whether the payload field is set.
-     */
     boolean hasPayload();
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     * @return The payload.
-     */
     com.google.protobuf.Any getPayload();
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     */
     com.google.protobuf.AnyOrBuilder getPayloadOrBuilder();
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.ResponseProto}
-   */
   public static final class ResponseProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.ResponseProto)
@@ -1513,17 +1196,9 @@ public final class Calendar {
 
     public static final int STATUS_FIELD_NUMBER = 1;
     private int status_;
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-     * @return The enum numeric value on the wire for status.
-     */
     @java.lang.Override public int getStatusValue() {
       return status_;
     }
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-     * @return The status.
-     */
     @java.lang.Override public via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto getStatus() {
       @SuppressWarnings("deprecation")
       via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto result = via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto.valueOf(status_);
@@ -1532,25 +1207,14 @@ public final class Calendar {
 
     public static final int PAYLOAD_FIELD_NUMBER = 2;
     private com.google.protobuf.Any payload_;
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     * @return Whether the payload field is set.
-     */
     @java.lang.Override
     public boolean hasPayload() {
       return payload_ != null;
     }
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     * @return The payload.
-     */
     @java.lang.Override
     public com.google.protobuf.Any getPayload() {
       return payload_ == null ? com.google.protobuf.Any.getDefaultInstance() : payload_;
     }
-    /**
-     * <code>.google.protobuf.Any payload = 2;</code>
-     */
     @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getPayloadOrBuilder() {
       return getPayload();
@@ -1726,9 +1390,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.ResponseProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.ResponseProto)
@@ -1888,39 +1549,21 @@ public final class Calendar {
       }
 
       private int status_ = 0;
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-       * @return The enum numeric value on the wire for status.
-       */
       @java.lang.Override public int getStatusValue() {
         return status_;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
       public Builder setStatusValue(int value) {
         
         status_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-       * @return The status.
-       */
       @java.lang.Override
       public via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto getStatus() {
         @SuppressWarnings("deprecation")
         via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto result = via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto.valueOf(status_);
         return result == null ? via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto.UNRECOGNIZED : result;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
       public Builder setStatus(via.sep3.viacalendar.gRPC.Calendar.StatusTypeProto value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1930,10 +1573,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.StatusTypeProto status = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearStatus() {
         
         status_ = 0;
@@ -1944,17 +1583,9 @@ public final class Calendar {
       private com.google.protobuf.Any payload_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> payloadBuilder_;
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       * @return Whether the payload field is set.
-       */
       public boolean hasPayload() {
         return payloadBuilder_ != null || payload_ != null;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       * @return The payload.
-       */
       public com.google.protobuf.Any getPayload() {
         if (payloadBuilder_ == null) {
           return payload_ == null ? com.google.protobuf.Any.getDefaultInstance() : payload_;
@@ -1962,9 +1593,6 @@ public final class Calendar {
           return payloadBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public Builder setPayload(com.google.protobuf.Any value) {
         if (payloadBuilder_ == null) {
           if (value == null) {
@@ -1978,9 +1606,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public Builder setPayload(
           com.google.protobuf.Any.Builder builderForValue) {
         if (payloadBuilder_ == null) {
@@ -1992,9 +1617,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public Builder mergePayload(com.google.protobuf.Any value) {
         if (payloadBuilder_ == null) {
           if (payload_ != null) {
@@ -2010,9 +1632,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public Builder clearPayload() {
         if (payloadBuilder_ == null) {
           payload_ = null;
@@ -2024,17 +1643,11 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public com.google.protobuf.Any.Builder getPayloadBuilder() {
         
         onChanged();
         return getPayloadFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       public com.google.protobuf.AnyOrBuilder getPayloadOrBuilder() {
         if (payloadBuilder_ != null) {
           return payloadBuilder_.getMessageOrBuilder();
@@ -2043,9 +1656,6 @@ public final class Calendar {
               com.google.protobuf.Any.getDefaultInstance() : payload_;
         }
       }
-      /**
-       * <code>.google.protobuf.Any payload = 2;</code>
-       */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getPayloadFieldBuilder() {
@@ -2116,77 +1726,27 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.EventProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     int getId();
 
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
     java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
     com.google.protobuf.ByteString
         getNameBytes();
 
-    /**
-     * <code>string tag = 3;</code>
-     * @return The tag.
-     */
     java.lang.String getTag();
-    /**
-     * <code>string tag = 3;</code>
-     * @return The bytes for tag.
-     */
     com.google.protobuf.ByteString
         getTagBytes();
 
-    /**
-     * <code>bool recursive = 4;</code>
-     * @return The recursive.
-     */
     boolean getRecursive();
 
-    /**
-     * <code>int32 creatorId = 5;</code>
-     * @return The creatorId.
-     */
     int getCreatorId();
 
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     * @return Whether the duration field is set.
-     */
     boolean hasDuration();
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     * @return The duration.
-     */
     com.google.protobuf.Timestamp getDuration();
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     */
     com.google.protobuf.TimestampOrBuilder getDurationOrBuilder();
 
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-     * @return The enum numeric value on the wire for typeOfRecursive.
-     */
     int getTypeOfRecursiveValue();
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-     * @return The typeOfRecursive.
-     */
     via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto getTypeOfRecursive();
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProto}
-   */
   public static final class EventProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.EventProto)
@@ -2314,10 +1874,6 @@ public final class Calendar {
 
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     @java.lang.Override
     public int getId() {
       return id_;
@@ -2325,10 +1881,6 @@ public final class Calendar {
 
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
     @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2342,10 +1894,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2363,10 +1911,6 @@ public final class Calendar {
 
     public static final int TAG_FIELD_NUMBER = 3;
     private volatile java.lang.Object tag_;
-    /**
-     * <code>string tag = 3;</code>
-     * @return The tag.
-     */
     @java.lang.Override
     public java.lang.String getTag() {
       java.lang.Object ref = tag_;
@@ -2380,10 +1924,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string tag = 3;</code>
-     * @return The bytes for tag.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getTagBytes() {
@@ -2401,10 +1941,6 @@ public final class Calendar {
 
     public static final int RECURSIVE_FIELD_NUMBER = 4;
     private boolean recursive_;
-    /**
-     * <code>bool recursive = 4;</code>
-     * @return The recursive.
-     */
     @java.lang.Override
     public boolean getRecursive() {
       return recursive_;
@@ -2412,10 +1948,6 @@ public final class Calendar {
 
     public static final int CREATORID_FIELD_NUMBER = 5;
     private int creatorId_;
-    /**
-     * <code>int32 creatorId = 5;</code>
-     * @return The creatorId.
-     */
     @java.lang.Override
     public int getCreatorId() {
       return creatorId_;
@@ -2423,25 +1955,14 @@ public final class Calendar {
 
     public static final int DURATION_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp duration_;
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     * @return Whether the duration field is set.
-     */
     @java.lang.Override
     public boolean hasDuration() {
       return duration_ != null;
     }
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     * @return The duration.
-     */
     @java.lang.Override
     public com.google.protobuf.Timestamp getDuration() {
       return duration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
     }
-    /**
-     * <code>.google.protobuf.Timestamp duration = 6;</code>
-     */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDurationOrBuilder() {
       return getDuration();
@@ -2449,17 +1970,9 @@ public final class Calendar {
 
     public static final int TYPEOFRECURSIVE_FIELD_NUMBER = 7;
     private int typeOfRecursive_;
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-     * @return The enum numeric value on the wire for typeOfRecursive.
-     */
     @java.lang.Override public int getTypeOfRecursiveValue() {
       return typeOfRecursive_;
     }
-    /**
-     * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-     * @return The typeOfRecursive.
-     */
     @java.lang.Override public via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto getTypeOfRecursive() {
       @SuppressWarnings("deprecation")
       via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto result = via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto.valueOf(typeOfRecursive_);
@@ -2690,9 +2203,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.EventProto)
@@ -2884,29 +2394,16 @@ public final class Calendar {
       }
 
       private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
       @java.lang.Override
       public int getId() {
         return id_;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
       public Builder setId(int value) {
         
         id_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearId() {
         
         id_ = 0;
@@ -2915,10 +2412,6 @@ public final class Calendar {
       }
 
       private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
@@ -2931,10 +2424,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
       public com.google.protobuf.ByteString
           getNameBytes() {
         java.lang.Object ref = name_;
@@ -2948,11 +2437,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
@@ -2963,21 +2447,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearName() {
         
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2991,10 +2466,6 @@ public final class Calendar {
       }
 
       private java.lang.Object tag_ = "";
-      /**
-       * <code>string tag = 3;</code>
-       * @return The tag.
-       */
       public java.lang.String getTag() {
         java.lang.Object ref = tag_;
         if (!(ref instanceof java.lang.String)) {
@@ -3007,10 +2478,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string tag = 3;</code>
-       * @return The bytes for tag.
-       */
       public com.google.protobuf.ByteString
           getTagBytes() {
         java.lang.Object ref = tag_;
@@ -3024,11 +2491,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string tag = 3;</code>
-       * @param value The tag to set.
-       * @return This builder for chaining.
-       */
       public Builder setTag(
           java.lang.String value) {
         if (value == null) {
@@ -3039,21 +2501,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string tag = 3;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearTag() {
         
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
-      /**
-       * <code>string tag = 3;</code>
-       * @param value The bytes for tag to set.
-       * @return This builder for chaining.
-       */
       public Builder setTagBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3067,29 +2520,16 @@ public final class Calendar {
       }
 
       private boolean recursive_ ;
-      /**
-       * <code>bool recursive = 4;</code>
-       * @return The recursive.
-       */
       @java.lang.Override
       public boolean getRecursive() {
         return recursive_;
       }
-      /**
-       * <code>bool recursive = 4;</code>
-       * @param value The recursive to set.
-       * @return This builder for chaining.
-       */
       public Builder setRecursive(boolean value) {
         
         recursive_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>bool recursive = 4;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearRecursive() {
         
         recursive_ = false;
@@ -3098,29 +2538,16 @@ public final class Calendar {
       }
 
       private int creatorId_ ;
-      /**
-       * <code>int32 creatorId = 5;</code>
-       * @return The creatorId.
-       */
       @java.lang.Override
       public int getCreatorId() {
         return creatorId_;
       }
-      /**
-       * <code>int32 creatorId = 5;</code>
-       * @param value The creatorId to set.
-       * @return This builder for chaining.
-       */
       public Builder setCreatorId(int value) {
         
         creatorId_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 creatorId = 5;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearCreatorId() {
         
         creatorId_ = 0;
@@ -3131,17 +2558,9 @@ public final class Calendar {
       private com.google.protobuf.Timestamp duration_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> durationBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       * @return Whether the duration field is set.
-       */
       public boolean hasDuration() {
         return durationBuilder_ != null || duration_ != null;
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       * @return The duration.
-       */
       public com.google.protobuf.Timestamp getDuration() {
         if (durationBuilder_ == null) {
           return duration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
@@ -3149,9 +2568,6 @@ public final class Calendar {
           return durationBuilder_.getMessage();
         }
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public Builder setDuration(com.google.protobuf.Timestamp value) {
         if (durationBuilder_ == null) {
           if (value == null) {
@@ -3165,9 +2581,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public Builder setDuration(
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (durationBuilder_ == null) {
@@ -3179,9 +2592,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public Builder mergeDuration(com.google.protobuf.Timestamp value) {
         if (durationBuilder_ == null) {
           if (duration_ != null) {
@@ -3197,9 +2607,6 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public Builder clearDuration() {
         if (durationBuilder_ == null) {
           duration_ = null;
@@ -3211,17 +2618,11 @@ public final class Calendar {
 
         return this;
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public com.google.protobuf.Timestamp.Builder getDurationBuilder() {
         
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       public com.google.protobuf.TimestampOrBuilder getDurationOrBuilder() {
         if (durationBuilder_ != null) {
           return durationBuilder_.getMessageOrBuilder();
@@ -3230,9 +2631,6 @@ public final class Calendar {
               com.google.protobuf.Timestamp.getDefaultInstance() : duration_;
         }
       }
-      /**
-       * <code>.google.protobuf.Timestamp duration = 6;</code>
-       */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
           getDurationFieldBuilder() {
@@ -3248,39 +2646,21 @@ public final class Calendar {
       }
 
       private int typeOfRecursive_ = 0;
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-       * @return The enum numeric value on the wire for typeOfRecursive.
-       */
       @java.lang.Override public int getTypeOfRecursiveValue() {
         return typeOfRecursive_;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-       * @param value The enum numeric value on the wire for typeOfRecursive to set.
-       * @return This builder for chaining.
-       */
       public Builder setTypeOfRecursiveValue(int value) {
         
         typeOfRecursive_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-       * @return The typeOfRecursive.
-       */
       @java.lang.Override
       public via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto getTypeOfRecursive() {
         @SuppressWarnings("deprecation")
         via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto result = via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto.valueOf(typeOfRecursive_);
         return result == null ? via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto.UNRECOGNIZED : result;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-       * @param value The typeOfRecursive to set.
-       * @return This builder for chaining.
-       */
       public Builder setTypeOfRecursive(via.sep3.viacalendar.gRPC.Calendar.TypeOfRecursiveProto value) {
         if (value == null) {
           throw new NullPointerException();
@@ -3290,10 +2670,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>.via.sep3.viacalendar.gRPC.TypeOfRecursiveProto typeOfRecursive = 7;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearTypeOfRecursive() {
         
         typeOfRecursive_ = 0;
@@ -3357,115 +2733,38 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.UserProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     int getId();
 
-    /**
-     * <code>string username = 2;</code>
-     * @return The username.
-     */
     java.lang.String getUsername();
-    /**
-     * <code>string username = 2;</code>
-     * @return The bytes for username.
-     */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
     java.lang.String getEmail();
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
     com.google.protobuf.ByteString
         getEmailBytes();
 
-    /**
-     * <code>string password = 4;</code>
-     * @return The password.
-     */
     java.lang.String getPassword();
-    /**
-     * <code>string password = 4;</code>
-     * @return The bytes for password.
-     */
     com.google.protobuf.ByteString
         getPasswordBytes();
 
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The firstName.
-     */
     java.lang.String getFirstName();
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The bytes for firstName.
-     */
     com.google.protobuf.ByteString
         getFirstNameBytes();
 
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The lastName.
-     */
     java.lang.String getLastName();
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The bytes for lastName.
-     */
     com.google.protobuf.ByteString
         getLastNameBytes();
 
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @return A list containing the eventIds.
-     */
     java.util.List<java.lang.Integer> getEventIdsList();
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @return The count of eventIds.
-     */
     int getEventIdsCount();
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @param index The index of the element to return.
-     * @return The eventIds at the given index.
-     */
     int getEventIds(int index);
 
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @return A list containing the calendarsIds.
-     */
     java.util.List<java.lang.Integer> getCalendarsIdsList();
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @return The count of calendarsIds.
-     */
     int getCalendarsIdsCount();
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @param index The index of the element to return.
-     * @return The calendarsIds at the given index.
-     */
     int getCalendarsIds(int index);
 
-    /**
-     * <code>int32 groupId = 9;</code>
-     * @return The groupId.
-     */
     int getGroupId();
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
-   */
   public static final class UserProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.UserProto)
@@ -3640,10 +2939,6 @@ public final class Calendar {
 
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     @java.lang.Override
     public int getId() {
       return id_;
@@ -3651,10 +2946,6 @@ public final class Calendar {
 
     public static final int USERNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object username_;
-    /**
-     * <code>string username = 2;</code>
-     * @return The username.
-     */
     @java.lang.Override
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -3668,10 +2959,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string username = 2;</code>
-     * @return The bytes for username.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -3689,10 +2976,6 @@ public final class Calendar {
 
     public static final int EMAIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
     @java.lang.Override
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -3706,10 +2989,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -3727,10 +3006,6 @@ public final class Calendar {
 
     public static final int PASSWORD_FIELD_NUMBER = 4;
     private volatile java.lang.Object password_;
-    /**
-     * <code>string password = 4;</code>
-     * @return The password.
-     */
     @java.lang.Override
     public java.lang.String getPassword() {
       java.lang.Object ref = password_;
@@ -3744,10 +3019,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string password = 4;</code>
-     * @return The bytes for password.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getPasswordBytes() {
@@ -3765,10 +3036,6 @@ public final class Calendar {
 
     public static final int FIRST_NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object firstName_;
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The firstName.
-     */
     @java.lang.Override
     public java.lang.String getFirstName() {
       java.lang.Object ref = firstName_;
@@ -3782,10 +3049,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string first_name = 5;</code>
-     * @return The bytes for firstName.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getFirstNameBytes() {
@@ -3803,10 +3066,6 @@ public final class Calendar {
 
     public static final int LAST_NAME_FIELD_NUMBER = 6;
     private volatile java.lang.Object lastName_;
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The lastName.
-     */
     @java.lang.Override
     public java.lang.String getLastName() {
       java.lang.Object ref = lastName_;
@@ -3820,10 +3079,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string last_name = 6;</code>
-     * @return The bytes for lastName.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getLastNameBytes() {
@@ -3841,27 +3096,14 @@ public final class Calendar {
 
     public static final int EVENTIDS_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList eventIds_;
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @return A list containing the eventIds.
-     */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getEventIdsList() {
       return eventIds_;
     }
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @return The count of eventIds.
-     */
     public int getEventIdsCount() {
       return eventIds_.size();
     }
-    /**
-     * <code>repeated int32 eventIds = 7;</code>
-     * @param index The index of the element to return.
-     * @return The eventIds at the given index.
-     */
     public int getEventIds(int index) {
       return eventIds_.getInt(index);
     }
@@ -3869,27 +3111,14 @@ public final class Calendar {
 
     public static final int CALENDARSIDS_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList calendarsIds_;
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @return A list containing the calendarsIds.
-     */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getCalendarsIdsList() {
       return calendarsIds_;
     }
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @return The count of calendarsIds.
-     */
     public int getCalendarsIdsCount() {
       return calendarsIds_.size();
     }
-    /**
-     * <code>repeated int32 calendarsIds = 8;</code>
-     * @param index The index of the element to return.
-     * @return The calendarsIds at the given index.
-     */
     public int getCalendarsIds(int index) {
       return calendarsIds_.getInt(index);
     }
@@ -3897,10 +3126,6 @@ public final class Calendar {
 
     public static final int GROUPID_FIELD_NUMBER = 9;
     private int groupId_;
-    /**
-     * <code>int32 groupId = 9;</code>
-     * @return The groupId.
-     */
     @java.lang.Override
     public int getGroupId() {
       return groupId_;
@@ -4177,9 +3402,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.UserProto)
@@ -4402,29 +3624,16 @@ public final class Calendar {
       private int bitField0_;
 
       private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
       @java.lang.Override
       public int getId() {
         return id_;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
       public Builder setId(int value) {
         
         id_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearId() {
         
         id_ = 0;
@@ -4433,10 +3642,6 @@ public final class Calendar {
       }
 
       private java.lang.Object username_ = "";
-      /**
-       * <code>string username = 2;</code>
-       * @return The username.
-       */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
@@ -4449,10 +3654,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string username = 2;</code>
-       * @return The bytes for username.
-       */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -4466,11 +3667,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string username = 2;</code>
-       * @param value The username to set.
-       * @return This builder for chaining.
-       */
       public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
@@ -4481,21 +3677,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string username = 2;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearUsername() {
         
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
-      /**
-       * <code>string username = 2;</code>
-       * @param value The bytes for username to set.
-       * @return This builder for chaining.
-       */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4509,10 +3696,6 @@ public final class Calendar {
       }
 
       private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 3;</code>
-       * @return The email.
-       */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
@@ -4525,10 +3708,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
-       */
       public com.google.protobuf.ByteString
           getEmailBytes() {
         java.lang.Object ref = email_;
@@ -4542,11 +3721,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
       public Builder setEmail(
           java.lang.String value) {
         if (value == null) {
@@ -4557,21 +3731,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string email = 3;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearEmail() {
         
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
       }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4585,10 +3750,6 @@ public final class Calendar {
       }
 
       private java.lang.Object password_ = "";
-      /**
-       * <code>string password = 4;</code>
-       * @return The password.
-       */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
         if (!(ref instanceof java.lang.String)) {
@@ -4601,10 +3762,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string password = 4;</code>
-       * @return The bytes for password.
-       */
       public com.google.protobuf.ByteString
           getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -4618,11 +3775,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string password = 4;</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
       public Builder setPassword(
           java.lang.String value) {
         if (value == null) {
@@ -4633,21 +3785,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string password = 4;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearPassword() {
         
         password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
       }
-      /**
-       * <code>string password = 4;</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
       public Builder setPasswordBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4661,10 +3804,6 @@ public final class Calendar {
       }
 
       private java.lang.Object firstName_ = "";
-      /**
-       * <code>string first_name = 5;</code>
-       * @return The firstName.
-       */
       public java.lang.String getFirstName() {
         java.lang.Object ref = firstName_;
         if (!(ref instanceof java.lang.String)) {
@@ -4677,10 +3816,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string first_name = 5;</code>
-       * @return The bytes for firstName.
-       */
       public com.google.protobuf.ByteString
           getFirstNameBytes() {
         java.lang.Object ref = firstName_;
@@ -4694,11 +3829,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string first_name = 5;</code>
-       * @param value The firstName to set.
-       * @return This builder for chaining.
-       */
       public Builder setFirstName(
           java.lang.String value) {
         if (value == null) {
@@ -4709,21 +3839,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string first_name = 5;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearFirstName() {
         
         firstName_ = getDefaultInstance().getFirstName();
         onChanged();
         return this;
       }
-      /**
-       * <code>string first_name = 5;</code>
-       * @param value The bytes for firstName to set.
-       * @return This builder for chaining.
-       */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4737,10 +3858,6 @@ public final class Calendar {
       }
 
       private java.lang.Object lastName_ = "";
-      /**
-       * <code>string last_name = 6;</code>
-       * @return The lastName.
-       */
       public java.lang.String getLastName() {
         java.lang.Object ref = lastName_;
         if (!(ref instanceof java.lang.String)) {
@@ -4753,10 +3870,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string last_name = 6;</code>
-       * @return The bytes for lastName.
-       */
       public com.google.protobuf.ByteString
           getLastNameBytes() {
         java.lang.Object ref = lastName_;
@@ -4770,11 +3883,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string last_name = 6;</code>
-       * @param value The lastName to set.
-       * @return This builder for chaining.
-       */
       public Builder setLastName(
           java.lang.String value) {
         if (value == null) {
@@ -4785,21 +3893,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string last_name = 6;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearLastName() {
         
         lastName_ = getDefaultInstance().getLastName();
         onChanged();
         return this;
       }
-      /**
-       * <code>string last_name = 6;</code>
-       * @param value The bytes for lastName to set.
-       * @return This builder for chaining.
-       */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4819,36 +3918,17 @@ public final class Calendar {
           bitField0_ |= 0x00000001;
          }
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @return A list containing the eventIds.
-       */
       public java.util.List<java.lang.Integer>
           getEventIdsList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(eventIds_) : eventIds_;
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @return The count of eventIds.
-       */
       public int getEventIdsCount() {
         return eventIds_.size();
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @param index The index of the element to return.
-       * @return The eventIds at the given index.
-       */
       public int getEventIds(int index) {
         return eventIds_.getInt(index);
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The eventIds to set.
-       * @return This builder for chaining.
-       */
       public Builder setEventIds(
           int index, int value) {
         ensureEventIdsIsMutable();
@@ -4856,22 +3936,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @param value The eventIds to add.
-       * @return This builder for chaining.
-       */
       public Builder addEventIds(int value) {
         ensureEventIdsIsMutable();
         eventIds_.addInt(value);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @param values The eventIds to add.
-       * @return This builder for chaining.
-       */
       public Builder addAllEventIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureEventIdsIsMutable();
@@ -4880,10 +3950,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventIds = 7;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearEventIds() {
         eventIds_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4898,36 +3964,17 @@ public final class Calendar {
           bitField0_ |= 0x00000002;
          }
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @return A list containing the calendarsIds.
-       */
       public java.util.List<java.lang.Integer>
           getCalendarsIdsList() {
         return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(calendarsIds_) : calendarsIds_;
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @return The count of calendarsIds.
-       */
       public int getCalendarsIdsCount() {
         return calendarsIds_.size();
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @param index The index of the element to return.
-       * @return The calendarsIds at the given index.
-       */
       public int getCalendarsIds(int index) {
         return calendarsIds_.getInt(index);
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The calendarsIds to set.
-       * @return This builder for chaining.
-       */
       public Builder setCalendarsIds(
           int index, int value) {
         ensureCalendarsIdsIsMutable();
@@ -4935,22 +3982,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @param value The calendarsIds to add.
-       * @return This builder for chaining.
-       */
       public Builder addCalendarsIds(int value) {
         ensureCalendarsIdsIsMutable();
         calendarsIds_.addInt(value);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @param values The calendarsIds to add.
-       * @return This builder for chaining.
-       */
       public Builder addAllCalendarsIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureCalendarsIdsIsMutable();
@@ -4959,10 +3996,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 calendarsIds = 8;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearCalendarsIds() {
         calendarsIds_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4971,29 +4004,16 @@ public final class Calendar {
       }
 
       private int groupId_ ;
-      /**
-       * <code>int32 groupId = 9;</code>
-       * @return The groupId.
-       */
       @java.lang.Override
       public int getGroupId() {
         return groupId_;
       }
-      /**
-       * <code>int32 groupId = 9;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
       public Builder setGroupId(int value) {
         
         groupId_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 groupId = 9;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearGroupId() {
         
         groupId_ = 0;
@@ -5057,44 +4077,16 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.GroupProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     int getId();
 
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
     java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
     com.google.protobuf.ByteString
         getNameBytes();
 
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @return A list containing the users.
-     */
     java.util.List<java.lang.Integer> getUsersList();
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @return The count of users.
-     */
     int getUsersCount();
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @param index The index of the element to return.
-     * @return The users at the given index.
-     */
     int getUsers(int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
-   */
   public static final class GroupProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.GroupProto)
@@ -5211,10 +4203,6 @@ public final class Calendar {
 
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     @java.lang.Override
     public int getId() {
       return id_;
@@ -5222,10 +4210,6 @@ public final class Calendar {
 
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
     @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -5239,10 +4223,6 @@ public final class Calendar {
         return s;
       }
     }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -5260,27 +4240,14 @@ public final class Calendar {
 
     public static final int USERS_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList users_;
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @return A list containing the users.
-     */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getUsersList() {
       return users_;
     }
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @return The count of users.
-     */
     public int getUsersCount() {
       return users_.size();
     }
-    /**
-     * <code>repeated int32 users = 3;</code>
-     * @param index The index of the element to return.
-     * @return The users at the given index.
-     */
     public int getUsers(int index) {
       return users_.getInt(index);
     }
@@ -5479,9 +4446,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.GroupProto)
@@ -5653,29 +4617,16 @@ public final class Calendar {
       private int bitField0_;
 
       private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
       @java.lang.Override
       public int getId() {
         return id_;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
       public Builder setId(int value) {
         
         id_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearId() {
         
         id_ = 0;
@@ -5684,10 +4635,6 @@ public final class Calendar {
       }
 
       private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
@@ -5700,10 +4647,6 @@ public final class Calendar {
           return (java.lang.String) ref;
         }
       }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
       public com.google.protobuf.ByteString
           getNameBytes() {
         java.lang.Object ref = name_;
@@ -5717,11 +4660,6 @@ public final class Calendar {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
@@ -5732,21 +4670,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearName() {
         
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5766,36 +4695,17 @@ public final class Calendar {
           bitField0_ |= 0x00000001;
          }
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @return A list containing the users.
-       */
       public java.util.List<java.lang.Integer>
           getUsersList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(users_) : users_;
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @return The count of users.
-       */
       public int getUsersCount() {
         return users_.size();
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @param index The index of the element to return.
-       * @return The users at the given index.
-       */
       public int getUsers(int index) {
         return users_.getInt(index);
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The users to set.
-       * @return This builder for chaining.
-       */
       public Builder setUsers(
           int index, int value) {
         ensureUsersIsMutable();
@@ -5803,22 +4713,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @param value The users to add.
-       * @return This builder for chaining.
-       */
       public Builder addUsers(int value) {
         ensureUsersIsMutable();
         users_.addInt(value);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @param values The users to add.
-       * @return This builder for chaining.
-       */
       public Builder addAllUsers(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureUsersIsMutable();
@@ -5827,10 +4727,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 users = 3;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearUsers() {
         users_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5894,38 +4790,14 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.CalendarProto)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     int getId();
 
-    /**
-     * <code>int32 userId = 2;</code>
-     * @return The userId.
-     */
     int getUserId();
 
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @return A list containing the eventListId.
-     */
     java.util.List<java.lang.Integer> getEventListIdList();
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @return The count of eventListId.
-     */
     int getEventListIdCount();
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @param index The index of the element to return.
-     * @return The eventListId at the given index.
-     */
     int getEventListId(int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProto}
-   */
   public static final class CalendarProto extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.CalendarProto)
@@ -6040,10 +4912,6 @@ public final class Calendar {
 
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
     @java.lang.Override
     public int getId() {
       return id_;
@@ -6051,10 +4919,6 @@ public final class Calendar {
 
     public static final int USERID_FIELD_NUMBER = 2;
     private int userId_;
-    /**
-     * <code>int32 userId = 2;</code>
-     * @return The userId.
-     */
     @java.lang.Override
     public int getUserId() {
       return userId_;
@@ -6062,27 +4926,14 @@ public final class Calendar {
 
     public static final int EVENTLISTID_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList eventListId_;
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @return A list containing the eventListId.
-     */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getEventListIdList() {
       return eventListId_;
     }
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @return The count of eventListId.
-     */
     public int getEventListIdCount() {
       return eventListId_.size();
     }
-    /**
-     * <code>repeated int32 eventListId = 3;</code>
-     * @param index The index of the element to return.
-     * @return The eventListId at the given index.
-     */
     public int getEventListId(int index) {
       return eventListId_.getInt(index);
     }
@@ -6282,9 +5133,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProto}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.CalendarProto)
@@ -6455,29 +5303,16 @@ public final class Calendar {
       private int bitField0_;
 
       private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
       @java.lang.Override
       public int getId() {
         return id_;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
       public Builder setId(int value) {
         
         id_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearId() {
         
         id_ = 0;
@@ -6486,29 +5321,16 @@ public final class Calendar {
       }
 
       private int userId_ ;
-      /**
-       * <code>int32 userId = 2;</code>
-       * @return The userId.
-       */
       @java.lang.Override
       public int getUserId() {
         return userId_;
       }
-      /**
-       * <code>int32 userId = 2;</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
       public Builder setUserId(int value) {
         
         userId_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>int32 userId = 2;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearUserId() {
         
         userId_ = 0;
@@ -6523,36 +5345,17 @@ public final class Calendar {
           bitField0_ |= 0x00000001;
          }
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @return A list containing the eventListId.
-       */
       public java.util.List<java.lang.Integer>
           getEventListIdList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(eventListId_) : eventListId_;
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @return The count of eventListId.
-       */
       public int getEventListIdCount() {
         return eventListId_.size();
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @param index The index of the element to return.
-       * @return The eventListId at the given index.
-       */
       public int getEventListId(int index) {
         return eventListId_.getInt(index);
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The eventListId to set.
-       * @return This builder for chaining.
-       */
       public Builder setEventListId(
           int index, int value) {
         ensureEventListIdIsMutable();
@@ -6560,22 +5363,12 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @param value The eventListId to add.
-       * @return This builder for chaining.
-       */
       public Builder addEventListId(int value) {
         ensureEventListIdIsMutable();
         eventListId_.addInt(value);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @param values The eventListId to add.
-       * @return This builder for chaining.
-       */
       public Builder addAllEventListId(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureEventListIdIsMutable();
@@ -6584,10 +5377,6 @@ public final class Calendar {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated int32 eventListId = 3;</code>
-       * @return This builder for chaining.
-       */
       public Builder clearEventListId() {
         eventListId_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -6651,33 +5440,15 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.CalendarProtoList)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
-    java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> 
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto>
         getCalendarsList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index);
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     int getCalendarsCount();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
-    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder>
         getCalendarsOrBuilderList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProtoList}
-   */
   public static final class CalendarProtoList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.CalendarProtoList)
@@ -6770,38 +5541,23 @@ public final class Calendar {
 
     public static final int CALENDARS_FIELD_NUMBER = 1;
     private java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> calendars_;
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> getCalendarsList() {
       return calendars_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
         getCalendarsOrBuilderList() {
       return calendars_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     @java.lang.Override
     public int getCalendarsCount() {
       return calendars_.size();
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index) {
       return calendars_.get(index);
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
         int index) {
@@ -6965,9 +5721,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.CalendarProtoList}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.CalendarProtoList)
@@ -7162,9 +5915,6 @@ public final class Calendar {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           via.sep3.viacalendar.gRPC.Calendar.CalendarProto, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder, via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> calendarsBuilder_;
 
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto> getCalendarsList() {
         if (calendarsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(calendars_);
@@ -7172,9 +5922,6 @@ public final class Calendar {
           return calendarsBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public int getCalendarsCount() {
         if (calendarsBuilder_ == null) {
           return calendars_.size();
@@ -7182,9 +5929,6 @@ public final class Calendar {
           return calendarsBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.CalendarProto getCalendars(int index) {
         if (calendarsBuilder_ == null) {
           return calendars_.get(index);
@@ -7192,9 +5936,6 @@ public final class Calendar {
           return calendarsBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder setCalendars(
           int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
         if (calendarsBuilder_ == null) {
@@ -7209,9 +5950,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder setCalendars(
           int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
         if (calendarsBuilder_ == null) {
@@ -7223,9 +5961,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder addCalendars(via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
         if (calendarsBuilder_ == null) {
           if (value == null) {
@@ -7239,9 +5974,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder addCalendars(
           int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto value) {
         if (calendarsBuilder_ == null) {
@@ -7256,9 +5988,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder addCalendars(
           via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
         if (calendarsBuilder_ == null) {
@@ -7270,9 +5999,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder addCalendars(
           int index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder builderForValue) {
         if (calendarsBuilder_ == null) {
@@ -7284,9 +6010,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder addAllCalendars(
           java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProto> values) {
         if (calendarsBuilder_ == null) {
@@ -7299,9 +6022,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder clearCalendars() {
         if (calendarsBuilder_ == null) {
           calendars_ = java.util.Collections.emptyList();
@@ -7312,9 +6032,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public Builder removeCalendars(int index) {
         if (calendarsBuilder_ == null) {
           ensureCalendarsIsMutable();
@@ -7325,16 +6042,10 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder getCalendarsBuilder(
           int index) {
         return getCalendarsFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder getCalendarsOrBuilder(
           int index) {
         if (calendarsBuilder_ == null) {
@@ -7342,10 +6053,7 @@ public final class Calendar {
           return calendarsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
-      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder> 
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.CalendarProtoOrBuilder>
            getCalendarsOrBuilderList() {
         if (calendarsBuilder_ != null) {
           return calendarsBuilder_.getMessageOrBuilderList();
@@ -7353,25 +6061,16 @@ public final class Calendar {
           return java.util.Collections.unmodifiableList(calendars_);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder addCalendarsBuilder() {
         return getCalendarsFieldBuilder().addBuilder(
             via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder addCalendarsBuilder(
           int index) {
         return getCalendarsFieldBuilder().addBuilder(
             index, via.sep3.viacalendar.gRPC.Calendar.CalendarProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.CalendarProto calendars = 1;</code>
-       */
-      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder> 
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.CalendarProto.Builder>
            getCalendarsBuilderList() {
         return getCalendarsFieldBuilder().getBuilderList();
       }
@@ -7446,33 +6145,15 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.UserProtoList)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
-    java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto> 
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto>
         getUsersList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.UserProto getUsers(int index);
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     int getUsersCount();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
-    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder> 
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder>
         getUsersOrBuilderList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder getUsersOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProtoList}
-   */
   public static final class UserProtoList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.UserProtoList)
@@ -7565,38 +6246,23 @@ public final class Calendar {
 
     public static final int USERS_FIELD_NUMBER = 1;
     private java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto> users_;
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto> getUsersList() {
       return users_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder> 
         getUsersOrBuilderList() {
       return users_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     @java.lang.Override
     public int getUsersCount() {
       return users_.size();
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.UserProto getUsers(int index) {
       return users_.get(index);
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder getUsersOrBuilder(
         int index) {
@@ -7760,9 +6426,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.UserProtoList}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.UserProtoList)
@@ -7957,9 +6620,6 @@ public final class Calendar {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           via.sep3.viacalendar.gRPC.Calendar.UserProto, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder, via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder> usersBuilder_;
 
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto> getUsersList() {
         if (usersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(users_);
@@ -7967,9 +6627,6 @@ public final class Calendar {
           return usersBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public int getUsersCount() {
         if (usersBuilder_ == null) {
           return users_.size();
@@ -7977,9 +6634,6 @@ public final class Calendar {
           return usersBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.UserProto getUsers(int index) {
         if (usersBuilder_ == null) {
           return users_.get(index);
@@ -7987,9 +6641,6 @@ public final class Calendar {
           return usersBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder setUsers(
           int index, via.sep3.viacalendar.gRPC.Calendar.UserProto value) {
         if (usersBuilder_ == null) {
@@ -8004,9 +6655,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder setUsers(
           int index, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder builderForValue) {
         if (usersBuilder_ == null) {
@@ -8018,9 +6666,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder addUsers(via.sep3.viacalendar.gRPC.Calendar.UserProto value) {
         if (usersBuilder_ == null) {
           if (value == null) {
@@ -8034,9 +6679,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder addUsers(
           int index, via.sep3.viacalendar.gRPC.Calendar.UserProto value) {
         if (usersBuilder_ == null) {
@@ -8051,9 +6693,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder addUsers(
           via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder builderForValue) {
         if (usersBuilder_ == null) {
@@ -8065,9 +6704,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder addUsers(
           int index, via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder builderForValue) {
         if (usersBuilder_ == null) {
@@ -8079,9 +6715,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder addAllUsers(
           java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.UserProto> values) {
         if (usersBuilder_ == null) {
@@ -8094,9 +6727,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder clearUsers() {
         if (usersBuilder_ == null) {
           users_ = java.util.Collections.emptyList();
@@ -8107,9 +6737,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public Builder removeUsers(int index) {
         if (usersBuilder_ == null) {
           ensureUsersIsMutable();
@@ -8120,16 +6747,10 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder getUsersBuilder(
           int index) {
         return getUsersFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder getUsersOrBuilder(
           int index) {
         if (usersBuilder_ == null) {
@@ -8137,10 +6758,7 @@ public final class Calendar {
           return usersBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
-      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder> 
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.UserProtoOrBuilder>
            getUsersOrBuilderList() {
         if (usersBuilder_ != null) {
           return usersBuilder_.getMessageOrBuilderList();
@@ -8148,25 +6766,16 @@ public final class Calendar {
           return java.util.Collections.unmodifiableList(users_);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder addUsersBuilder() {
         return getUsersFieldBuilder().addBuilder(
             via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder addUsersBuilder(
           int index) {
         return getUsersFieldBuilder().addBuilder(
             index, via.sep3.viacalendar.gRPC.Calendar.UserProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.UserProto users = 1;</code>
-       */
-      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder> 
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.UserProto.Builder>
            getUsersBuilderList() {
         return getUsersFieldBuilder().getBuilderList();
       }
@@ -8241,33 +6850,15 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.EventProtoList)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
-    java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> 
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto>
         getEventsList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.EventProto getEvents(int index);
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     int getEventsCount();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
-    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder>
         getEventsOrBuilderList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventsOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProtoList}
-   */
   public static final class EventProtoList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.EventProtoList)
@@ -8360,38 +6951,23 @@ public final class Calendar {
 
     public static final int EVENTS_FIELD_NUMBER = 1;
     private java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> events_;
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventsList() {
       return events_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
         getEventsOrBuilderList() {
       return events_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     @java.lang.Override
     public int getEventsCount() {
       return events_.size();
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.EventProto getEvents(int index) {
       return events_.get(index);
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventsOrBuilder(
         int index) {
@@ -8555,9 +7131,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.EventProtoList}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.EventProtoList)
@@ -8752,9 +7325,6 @@ public final class Calendar {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           via.sep3.viacalendar.gRPC.Calendar.EventProto, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder, via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> eventsBuilder_;
 
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto> getEventsList() {
         if (eventsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(events_);
@@ -8762,9 +7332,6 @@ public final class Calendar {
           return eventsBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public int getEventsCount() {
         if (eventsBuilder_ == null) {
           return events_.size();
@@ -8772,9 +7339,6 @@ public final class Calendar {
           return eventsBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.EventProto getEvents(int index) {
         if (eventsBuilder_ == null) {
           return events_.get(index);
@@ -8782,9 +7346,6 @@ public final class Calendar {
           return eventsBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder setEvents(
           int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
         if (eventsBuilder_ == null) {
@@ -8799,9 +7360,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder setEvents(
           int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
         if (eventsBuilder_ == null) {
@@ -8813,9 +7371,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder addEvents(via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
         if (eventsBuilder_ == null) {
           if (value == null) {
@@ -8829,9 +7384,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder addEvents(
           int index, via.sep3.viacalendar.gRPC.Calendar.EventProto value) {
         if (eventsBuilder_ == null) {
@@ -8846,9 +7398,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder addEvents(
           via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
         if (eventsBuilder_ == null) {
@@ -8860,9 +7409,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder addEvents(
           int index, via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder builderForValue) {
         if (eventsBuilder_ == null) {
@@ -8874,9 +7420,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder addAllEvents(
           java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.EventProto> values) {
         if (eventsBuilder_ == null) {
@@ -8889,9 +7432,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder clearEvents() {
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
@@ -8902,9 +7442,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public Builder removeEvents(int index) {
         if (eventsBuilder_ == null) {
           ensureEventsIsMutable();
@@ -8915,16 +7452,10 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder getEventsBuilder(
           int index) {
         return getEventsFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder getEventsOrBuilder(
           int index) {
         if (eventsBuilder_ == null) {
@@ -8932,10 +7463,7 @@ public final class Calendar {
           return eventsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
-      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder> 
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.EventProtoOrBuilder>
            getEventsOrBuilderList() {
         if (eventsBuilder_ != null) {
           return eventsBuilder_.getMessageOrBuilderList();
@@ -8943,25 +7471,16 @@ public final class Calendar {
           return java.util.Collections.unmodifiableList(events_);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventsBuilder() {
         return getEventsFieldBuilder().addBuilder(
             via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder addEventsBuilder(
           int index) {
         return getEventsFieldBuilder().addBuilder(
             index, via.sep3.viacalendar.gRPC.Calendar.EventProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.EventProto events = 1;</code>
-       */
-      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder> 
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.EventProto.Builder>
            getEventsBuilderList() {
         return getEventsFieldBuilder().getBuilderList();
       }
@@ -9036,33 +7555,15 @@ public final class Calendar {
       // @@protoc_insertion_point(interface_extends:via.sep3.viacalendar.gRPC.GroupProtoList)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
-    java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto> 
+    java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto>
         getGroupsList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroups(int index);
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     int getGroupsCount();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
-    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> 
+    java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder>
         getGroupsOrBuilderList();
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupsOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProtoList}
-   */
   public static final class GroupProtoList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:via.sep3.viacalendar.gRPC.GroupProtoList)
@@ -9155,38 +7656,23 @@ public final class Calendar {
 
     public static final int GROUPS_FIELD_NUMBER = 1;
     private java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto> groups_;
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto> getGroupsList() {
       return groups_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     @java.lang.Override
     public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> 
         getGroupsOrBuilderList() {
       return groups_;
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     @java.lang.Override
     public int getGroupsCount() {
       return groups_.size();
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroups(int index) {
       return groups_.get(index);
     }
-    /**
-     * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-     */
     @java.lang.Override
     public via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupsOrBuilder(
         int index) {
@@ -9350,9 +7836,6 @@ public final class Calendar {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code via.sep3.viacalendar.gRPC.GroupProtoList}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:via.sep3.viacalendar.gRPC.GroupProtoList)
@@ -9547,9 +8030,6 @@ public final class Calendar {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           via.sep3.viacalendar.gRPC.Calendar.GroupProto, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder, via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> groupsBuilder_;
 
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto> getGroupsList() {
         if (groupsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(groups_);
@@ -9557,9 +8037,6 @@ public final class Calendar {
           return groupsBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public int getGroupsCount() {
         if (groupsBuilder_ == null) {
           return groups_.size();
@@ -9567,9 +8044,6 @@ public final class Calendar {
           return groupsBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.GroupProto getGroups(int index) {
         if (groupsBuilder_ == null) {
           return groups_.get(index);
@@ -9577,9 +8051,6 @@ public final class Calendar {
           return groupsBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder setGroups(
           int index, via.sep3.viacalendar.gRPC.Calendar.GroupProto value) {
         if (groupsBuilder_ == null) {
@@ -9594,9 +8065,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder setGroups(
           int index, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder builderForValue) {
         if (groupsBuilder_ == null) {
@@ -9608,9 +8076,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder addGroups(via.sep3.viacalendar.gRPC.Calendar.GroupProto value) {
         if (groupsBuilder_ == null) {
           if (value == null) {
@@ -9624,9 +8089,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder addGroups(
           int index, via.sep3.viacalendar.gRPC.Calendar.GroupProto value) {
         if (groupsBuilder_ == null) {
@@ -9641,9 +8103,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder addGroups(
           via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder builderForValue) {
         if (groupsBuilder_ == null) {
@@ -9655,9 +8114,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder addGroups(
           int index, via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder builderForValue) {
         if (groupsBuilder_ == null) {
@@ -9669,9 +8125,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder addAllGroups(
           java.lang.Iterable<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProto> values) {
         if (groupsBuilder_ == null) {
@@ -9684,9 +8137,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder clearGroups() {
         if (groupsBuilder_ == null) {
           groups_ = java.util.Collections.emptyList();
@@ -9697,9 +8147,6 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public Builder removeGroups(int index) {
         if (groupsBuilder_ == null) {
           ensureGroupsIsMutable();
@@ -9710,16 +8157,10 @@ public final class Calendar {
         }
         return this;
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder getGroupsBuilder(
           int index) {
         return getGroupsFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder getGroupsOrBuilder(
           int index) {
         if (groupsBuilder_ == null) {
@@ -9727,10 +8168,7 @@ public final class Calendar {
           return groupsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
-      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder> 
+      public java.util.List<? extends via.sep3.viacalendar.gRPC.Calendar.GroupProtoOrBuilder>
            getGroupsOrBuilderList() {
         if (groupsBuilder_ != null) {
           return groupsBuilder_.getMessageOrBuilderList();
@@ -9738,25 +8176,16 @@ public final class Calendar {
           return java.util.Collections.unmodifiableList(groups_);
         }
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder addGroupsBuilder() {
         return getGroupsFieldBuilder().addBuilder(
             via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
       public via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder addGroupsBuilder(
           int index) {
         return getGroupsFieldBuilder().addBuilder(
             index, via.sep3.viacalendar.gRPC.Calendar.GroupProto.getDefaultInstance());
       }
-      /**
-       * <code>repeated .via.sep3.viacalendar.gRPC.GroupProto groups = 1;</code>
-       */
-      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder> 
+      public java.util.List<via.sep3.viacalendar.gRPC.Calendar.GroupProto.Builder>
            getGroupsBuilderList() {
         return getGroupsFieldBuilder().getBuilderList();
       }
