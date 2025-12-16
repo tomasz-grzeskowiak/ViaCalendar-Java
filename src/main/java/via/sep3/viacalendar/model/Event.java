@@ -70,9 +70,12 @@ public class Event {
    *
    * @see java.time.Instant
    */
-  @Column(name = "duration")
-    private Instant duration ;
+  @Column(name = "start")
+    private Instant start ;
 
+
+  @Column(name = "end_time")
+    private Instant end ;
   /**
    * Type of recursive operation
    * <p>
@@ -116,7 +119,8 @@ public class Event {
         this.eventId = proto.getId();
         //set creator after user is retrieved from database
         //set calendars after calendar is retrieved from database
-        this.duration = proto.getDuration().getSeconds() > 0 ? Instant.ofEpochSecond(proto.getDuration().getSeconds()) : null;//convert it from proto to Instant
+        this.start = proto.getStart().getSeconds() > 0 ? Instant.ofEpochSecond(proto.getStart().getSeconds()) : null;//convert it from proto to Instant
+        this.end = proto.getEndTime().getSeconds() > 0 ? Instant.ofEpochSecond(proto.getEndTime().getSeconds()) : null;//convert it from proto to Instant
         this.typeOfRecursive = ProtoUtilities.parseTypeOfRecursiveToString(proto.getTypeOfRecursive());
     }
 
@@ -167,17 +171,26 @@ public class Event {
    *
    * @return The duration.
    */
-  public Instant getDuration() {
-        return duration;
+  public Instant getStart() {
+        return start;//duration;
     }
 
+    public Instant getEnd() {
+        return end;//duration;
+    }
   /**
    * Sets the duration for the current object.
    *
-   * @param duration The new duration value.
+   * @param start The new start value.
    */
-  public void setDuration(Instant duration) {
-        this.duration = duration;
+
+
+  public void setStart(Instant start) {
+        this.start = start;
+    }
+
+    public void setEnd(Instant end) {
+         this.end = end;
     }
 
   /**
@@ -299,7 +312,8 @@ public class Event {
                 ", name='" + name + '\'' +
                 ", tag='" + tag + '\'' +
                 ", recursive=" + recursive +
-                ", duration=" + duration +
+                ", start=" + start +
+                ", end_time=" + end +
                 ", typeOfRecursive='" + typeOfRecursive + '\'' +
                 '}';
     }

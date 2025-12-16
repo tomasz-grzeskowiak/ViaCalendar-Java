@@ -125,25 +125,32 @@ public class ProtoUtilities {
    * @throws RuntimeException Thrown when the input Event is null.
    */
   public static EventProto parseEventToProto(Event event) {
-        EventProto.Builder builder = EventProto.newBuilder();
-        if(event.getEventId() == null)
-        {
-            throw new RuntimeException("Event is null");
-        }
-        builder.setId(event.getEventId())
-                .setName(event.getName() == null ? "" : event.getName() )
-                .setTag(event.getTag() == null ? "" : event.getTag())
-                .setRecursive(event.getRecursive() != null && event.getRecursive())
-                .setDuration(event.getDuration() == null ?
-                        Timestamp.getDefaultInstance() :
-                        Timestamp.newBuilder().setSeconds
-                                (event.getDuration().getEpochSecond())
-                                .build())
-                .setTypeOfRecursive(parseStringToTypeOfRecursive(event.getTypeOfRecursive()))
-                .setCreatorId(event.getCreator().getId() == null ?
-                        0 : event.getCreator().getId());
-            return builder.build();
-    }
+      EventProto.Builder builder = EventProto.newBuilder();
+
+      if(event.getEventId() == null) {
+          throw new RuntimeException("Event is null");
+      }
+
+      builder.setId(event.getEventId())
+              .setName(event.getName() == null ? "" : event.getName())
+              .setTag(event.getTag() == null ? "" : event.getTag())
+              .setRecursive(event.getRecursive() != null && event.getRecursive())
+              .setStart(event.getStart() == null ?
+                      Timestamp.getDefaultInstance() :
+                      Timestamp.newBuilder()
+                              .setSeconds(event.getStart().getEpochSecond())
+                              .build())
+              .setEndTime(event.getEnd() == null ?
+                      Timestamp.getDefaultInstance() :
+                      Timestamp.newBuilder()
+                              .setSeconds(event.getEnd().getEpochSecond())
+                              .build())
+              .setTypeOfRecursive(parseStringToTypeOfRecursive(event.getTypeOfRecursive()))
+              .setCreatorId(event.getCreator().getId() == null ?
+                      0 : event.getCreator().getId());
+
+      return builder.build();
+  }
 
   /**
    * Parses a string to the corresponding TypeOfRecursiveProto enum value.
