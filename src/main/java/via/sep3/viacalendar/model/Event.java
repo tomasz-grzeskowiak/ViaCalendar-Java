@@ -73,6 +73,11 @@ public class Event {
   @Column(name = "start")
     private Instant start ;
 
+   /**
+   * End time of the event or operation.
+   * <p>
+   * Represents the timestamp when an event or operation ends.
+   */
 
   @Column(name = "end_time")
     private Instant end ;
@@ -175,7 +180,14 @@ public class Event {
         return start;//duration;
     }
 
-    public Instant getEnd() {
+  /**
+   * Retrieves the end time.
+   * <p>
+   * Returns the end time as an Instant object.
+   *
+   * @return The end time.
+   */
+  public Instant getEnd() {
         return end;//duration;
     }
   /**
@@ -189,7 +201,12 @@ public class Event {
         this.start = start;
     }
 
-    public void setEnd(Instant end) {
+  /**
+   * Sets the end time for the current instance.
+   *
+   * @param end The new end time.
+   */
+  public void setEnd(Instant end) {
          this.end = end;
     }
 
